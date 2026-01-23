@@ -1,1 +1,2 @@
-Vite Template with mock setup
+Fin-mate
+Finace Dashboard UI
