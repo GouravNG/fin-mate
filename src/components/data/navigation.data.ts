@@ -1,4 +1,4 @@
-import type { TNavigation } from "@/types/Component.types"
+import type { TNavigation } from "@/types/component.types"
 import { CreditCard, Home, Settings, Wallet } from "lucide-react"
 
 export const navigationData: TNavigation[] = [
