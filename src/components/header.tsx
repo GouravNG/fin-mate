@@ -8,7 +8,7 @@ type THeader = {
 
 const Header: React.FC<THeader> = ({ username }) => {
   return (
-    <header className="flex items-center justify-between mb-4">
+    <header className="flex items-center justify-between mb-4 p-2">
       <div className="flex items-center justify-center space-x-2">
         <div className="pr-2">
           <Avatar size="lg">
