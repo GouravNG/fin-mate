@@ -23,7 +23,7 @@ const Header: React.FC<THeader> = ({ username }) => {
       </div>
       <div className="flex justify-end">
         <span className="bg-slate-100 border rounded-full p-2">
-          <Bell fill="#000" />
+          <Bell />
         </span>
       </div>
     </header>

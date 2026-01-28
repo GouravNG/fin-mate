@@ -8,14 +8,13 @@ const Navigation = () => {
         {navigationData.map((n, k) => {
           return (
             <li key={n.title + k}>
-              <Link to={n.href}>
-                <span
-                  title={n.title}
-                  className="flex flex-col items-center justify-center p-2"
-                >
-                  <n.icon className="p-2 shrink-0 w-10 h-10" />
-                  <span className="sm:hidden text-sm">{n.title}</span>
-                </span>
+              <Link
+                to={n.href}
+                activeOptions={{ exact: false }}
+                className="flex flex-col items-center justify-center p-2 text-slate-500 [&.active]:text-blue-500"
+              >
+                <n.icon className="p-2 shrink-0 w-10 h-10" />
+                <span className="sm:hidden text-sm">{n.title}</span>
               </Link>
             </li>
           )
