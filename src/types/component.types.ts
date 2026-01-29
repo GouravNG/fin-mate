@@ -5,3 +5,12 @@ export type TNavigation = {
   icon: LucideIcon
   href: string
 }
+
+export type THeroCard = {
+  totalBalance: number
+  trendPercent: number
+  categories: {
+    categoryName: string
+    categoryImgSrc: string
+  }[]
+}
