@@ -2,12 +2,40 @@ import { faker } from "@faker-js/faker"
 
 export const mocks = {
   user: {
-    getUrl: () => "https://api.example.com/user",
+    getUrl: () => "https://api.example.com/summery",
     getMockData: () => {
       return {
-        id: faker.number.int({ max: 1000 }),
-        firstName: faker.person.firstName(),
-        lastName: faker.person.lastName(),
+        balance: faker.number.int({ min: 1000, max: 100000 }),
+        spendingRate: {
+          type: "increase",
+          percent: faker.number.float({
+            min: 1,
+            max: 10,
+            fractionDigits: 2,
+          }),
+        },
+        topCategories: faker.helpers.arrayElements([
+          {
+            categoryName: faker.commerce.productName(),
+            categoryImgSrc: faker.image.avatarGitHub(),
+          },
+          {
+            categoryName: faker.commerce.productName(),
+            categoryImgSrc: faker.image.avatarGitHub(),
+          },
+          {
+            categoryName: faker.commerce.productName(),
+            categoryImgSrc: faker.image.avatarGitHub(),
+          },
+          {
+            categoryName: faker.commerce.productName(),
+            categoryImgSrc: faker.image.avatarGitHub(),
+          },
+          {
+            categoryName: faker.commerce.productName(),
+            categoryImgSrc: faker.image.avatarGitHub(),
+          },
+        ]),
       }
     },
   },

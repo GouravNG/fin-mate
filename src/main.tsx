@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client"
 import { createRouter, RouterProvider } from "@tanstack/react-router"
 import "./index.css"
 import { routeTree } from "./routeTree.gen.ts"
+import TanstackQueryProvider from "./components/context/TanstackQuery.provider.tsx"
 
 async function enableMocking() {
   const { worker } = await import("./mocks/browser.ts")
@@ -21,7 +22,9 @@ declare module "@tanstack/react-router" {
 enableMocking().then(() => {
   createRoot(document.getElementById("root")!).render(
     <StrictMode>
-      <RouterProvider router={router} />
+      <TanstackQueryProvider>
+        <RouterProvider router={router} />
+      </TanstackQueryProvider>
     </StrictMode>,
   )
 })
