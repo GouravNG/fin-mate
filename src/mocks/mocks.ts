@@ -36,6 +36,13 @@ export const mocks = {
             categoryImgSrc: faker.image.avatarGitHub(),
           },
         ]),
+        budget: (() => {
+          const total = faker.number.int({ min: 5000, max: 20000 })
+          return {
+            total,
+            spent: faker.number.int({ min: 1000, max: total }),
+          }
+        })(),
       }
     },
   },
