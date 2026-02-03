@@ -4,6 +4,7 @@ import {
 } from "@/queries/hooks/summery.hooks"
 import HeroCard from "../HeroCards"
 import BudgetCard from "../BudgetCard"
+import QuickAction from "../QuickAction"
 
 export const Home = () => {
   const { data, error, isLoading } = useGetSummery()
@@ -23,6 +24,7 @@ export const Home = () => {
           utlisedBudget={data.budget.spent}
           utilizationPercent={parseInt(budgetUtilization!)}
         />
+        <QuickAction />
       </>
     )
 }
