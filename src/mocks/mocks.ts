@@ -1,5 +1,5 @@
 import { faker } from "@faker-js/faker"
-import { getRandomCategoryIdByType } from "./helpers/RandomCategory"
+import { getRandomCategoryIdByType } from "./helpers/randomCategory"
 
 export const mocks = {
   user: {
@@ -39,7 +39,7 @@ export const mocks = {
           title: faker.commerce.productName(),
           categoryId: getRandomCategoryIdByType(type),
           date: faker.date.recent().toISOString(),
-          amount: faker.number.int({ min: 10, max: 1000 }),
+          amount: faker.number.float({ min: 10, max: 1000 }).toFixed(2),
           type: type,
         }
       })
