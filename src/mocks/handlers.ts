@@ -13,4 +13,9 @@ export const handlers = [
     const limit = parseInt(url.searchParams.get("limit") || "10")
     return HttpResponse.json(mocks.transactions.getTransactions(page, limit))
   }),
+
+  // Mock for accounts/cards endpoint
+  http.get(mocks.accounts.cards.getUrl(), () =>
+    HttpResponse.json(mocks.accounts.cards.getMockData()),
+  ),
 ]
