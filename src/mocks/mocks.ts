@@ -35,7 +35,7 @@ export const mocks = {
       return Array.from({ length: limit }, () => {
         const type = faker.helpers.arrayElement(["expense", "income"] as const)
         return {
-          id: faker.string.uuid(),
+          id: faker.number.int({ min: 1, max: 20 }),
           title: faker.commerce.productName(),
           categoryId: getRandomCategoryIdByType(type),
           date: faker.date.recent().toISOString(),
@@ -50,7 +50,7 @@ export const mocks = {
       getUrl: () => "https://api.example.com/accounts/cards",
       getMockData: () => {
         return Array.from({ length: 3 }, () => ({
-          id: faker.string.uuid(),
+          id: faker.number.int({ min: 1, max: 20 }),
           cardTitle: faker.finance.accountName(),
           transaction: faker.number.float({ min: 1000, max: 10000 }).toFixed(2),
           cardtype: faker.helpers.arrayElement(["credit", "debit"] as const),
