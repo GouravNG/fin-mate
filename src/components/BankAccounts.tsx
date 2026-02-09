@@ -1,5 +1,6 @@
 import { Dot, Landmark, Lock, PlusCircle } from "lucide-react"
 import { Button } from "./ui/button"
+import { useNavigate } from "@tanstack/react-router"
 
 const BankAccount = () => {
   return (
@@ -31,6 +32,7 @@ const BankAccount = () => {
 }
 
 export const BankAccounts = () => {
+  const navigate = useNavigate()
   return (
     <>
       <p className="text-xl font-semibold">
@@ -41,12 +43,15 @@ export const BankAccounts = () => {
         <BankAccount />
         <BankAccount />
         <BankAccount />
-        <div className="p-4 w-full flex-wrap border rounded-xl sm:max-w-74 flex items-center justify-center bg-slate-50">
-          <Button variant={"ghost"}>
+        <div className="p-4 w-full flex-wrap border rounded-xl sm:max-w-74 sm:flex items-center justify-center bg-slate-50 hidden">
+          <Button
+            variant={"ghost"}
+            onClick={() => navigate({ to: "/cards/addAccount" })}
+          >
             <span>
               <PlusCircle />
             </span>
-            Add new Account{" "}
+            Add new Account
           </Button>
         </div>
       </div>
@@ -63,7 +68,10 @@ export const BankAccounts = () => {
         </div>
       </div>
       <div className="w-full p-2 mb-20 sm:hidden">
-        <Button className="w-full font-semibold bg-blue-500">
+        <Button
+          className="w-full font-semibold bg-blue-500"
+          onClick={() => navigate({ to: "/cards/addAccount" })}
+        >
           <PlusCircle />
           Add New Account
         </Button>
