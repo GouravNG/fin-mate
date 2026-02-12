@@ -1,5 +1,6 @@
 import { Bell } from "lucide-react"
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar"
+import { ModeToggle } from "./mode-toggle"
 
 type THeader = {
   username: string
@@ -21,8 +22,9 @@ const Header: React.FC<THeader> = ({ username }) => {
           <p className="font-semibold text-lg">{username}</p>
         </div>
       </div>
-      <div className="flex justify-end">
-        <span className="bg-slate-100 border rounded-full p-2">
+      <div className="flex items-center space-x-2">
+        <ModeToggle />
+        <span className="bg-slate-100 dark:bg-slate-800 border rounded-full p-2">
           <Bell />
         </span>
       </div>
