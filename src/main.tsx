@@ -1,7 +1,8 @@
-import { StrictMode } from "react"
+import { StrictMode, Suspense } from "react"
 import { createRoot } from "react-dom/client"
 import { createRouter, RouterProvider } from "@tanstack/react-router"
 import "./index.css"
+import "./i18n" // Import i18n configuration
 import { routeTree } from "./routeTree.gen.ts"
 import TanstackQueryProvider from "./components/context/TanstackQuery.provider.tsx"
 
@@ -22,9 +23,11 @@ declare module "@tanstack/react-router" {
 enableMocking().then(() => {
   createRoot(document.getElementById("root")!).render(
     <StrictMode>
-      <TanstackQueryProvider>
-        <RouterProvider router={router} />
-      </TanstackQueryProvider>
+      <Suspense fallback="Loading translations...">
+        <TanstackQueryProvider>
+          <RouterProvider router={router} />
+        </TanstackQueryProvider>
+      </Suspense>
     </StrictMode>,
   )
 })
