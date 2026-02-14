@@ -4,6 +4,7 @@ import { createRouter, RouterProvider } from "@tanstack/react-router"
 import "./index.css"
 import { routeTree } from "./routeTree.gen.ts"
 import TanstackQueryProvider from "./components/context/TanstackQuery.provider.tsx"
+import { ThemeWatcher } from "./components/theme-watcher"
 
 async function enableMocking() {
   const { worker } = await import("./mocks/browser.ts")
@@ -23,6 +24,7 @@ enableMocking().then(() => {
   createRoot(document.getElementById("root")!).render(
     <StrictMode>
       <TanstackQueryProvider>
+        <ThemeWatcher />
         <RouterProvider router={router} />
       </TanstackQueryProvider>
     </StrictMode>,
