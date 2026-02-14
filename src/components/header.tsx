@@ -1,6 +1,7 @@
 import { Bell } from "lucide-react"
 import { useTranslation } from "react-i18next"
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar"
+import { ModeToggle } from "./mode-toggle"
 import { LanguageSwitcher } from "./LanguageSwitcher"
 
 type THeader = {
@@ -22,12 +23,15 @@ const Header: React.FC<THeader> = ({ username }) => {
             </Avatar>
           </div>
           <div className="flex-1">
-            <p className="font-bold text-sm text-slate-600">{t("common.good_morning")}</p>
+            <p className="font-bold text-sm text-slate-600">
+              {t("common.good_morning")}
+            </p>
             <p className="font-semibold text-lg">{username}</p>
           </div>
         </div>
-        <div className="flex justify-end items-center gap-2">
-          <span className="bg-slate-100 border rounded-full p-2">
+        <div className="flex items-center space-x-2 gap-2">
+          <ModeToggle />
+          <span className="bg-slate-100 dark:bg-slate-800 border rounded-full p-2">
             <Bell size={20} />
           </span>
         </div>

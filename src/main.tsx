@@ -5,6 +5,7 @@ import "./index.css"
 import "./i18n" // Import i18n configuration
 import { routeTree } from "./routeTree.gen.ts"
 import TanstackQueryProvider from "./components/context/TanstackQuery.provider.tsx"
+import { ThemeWatcher } from "./components/theme-watcher"
 
 async function enableMocking() {
   const { worker } = await import("./mocks/browser.ts")
@@ -25,6 +26,7 @@ enableMocking().then(() => {
     <StrictMode>
       <Suspense fallback="Loading translations...">
         <TanstackQueryProvider>
+        <ThemeWatcher />
           <RouterProvider router={router} />
         </TanstackQueryProvider>
       </Suspense>
