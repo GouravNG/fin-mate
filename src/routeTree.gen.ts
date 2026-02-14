@@ -10,33 +10,53 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CardsIndexRouteImport } from './routes/cards/index'
+import { Route as CardsAddAccountRouteImport } from './routes/cards/addAccount'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CardsIndexRoute = CardsIndexRouteImport.update({
+  id: '/cards/',
+  path: '/cards/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CardsAddAccountRoute = CardsAddAccountRouteImport.update({
+  id: '/cards/addAccount',
+  path: '/cards/addAccount',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/cards/addAccount': typeof CardsAddAccountRoute
+  '/cards/': typeof CardsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/cards/addAccount': typeof CardsAddAccountRoute
+  '/cards': typeof CardsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/cards/addAccount': typeof CardsAddAccountRoute
+  '/cards/': typeof CardsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/cards/addAccount' | '/cards/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/cards/addAccount' | '/cards'
+  id: '__root__' | '/' | '/cards/addAccount' | '/cards/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CardsAddAccountRoute: typeof CardsAddAccountRoute
+  CardsIndexRoute: typeof CardsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +68,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/cards/': {
+      id: '/cards/'
+      path: '/cards'
+      fullPath: '/cards/'
+      preLoaderRoute: typeof CardsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cards/addAccount': {
+      id: '/cards/addAccount'
+      path: '/cards/addAccount'
+      fullPath: '/cards/addAccount'
+      preLoaderRoute: typeof CardsAddAccountRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CardsAddAccountRoute: CardsAddAccountRoute,
+  CardsIndexRoute: CardsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

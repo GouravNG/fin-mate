@@ -4,7 +4,7 @@ import { createRootRoute, Outlet } from "@tanstack/react-router"
 
 const RootLayout = () => {
   return (
-    <div className="h-screen">
+    <div className="h-screen overflow-x-hidden">
       <div className="flex flex-col-reverse sm:flex-row">
         <Navigation />
         <div className="w-full">
