@@ -99,3 +99,20 @@ export const HighGrowth: Story = {
     trendPercent: 45,
   },
 }
+
+/**
+ * const meta = {
+  title: "My stories",
+  component: Button,
+};
+export default meta;
+
+export const MyStory = {
+  parameters: {
+    design: {
+      type: "figma",
+      url: "https://www.figma.com/file/LKQ4FJ4bTnCSjedbRpk931/Sample-File",
+    },
+  },
+};
+ */
