@@ -1,0 +1,10 @@
+{
+    "common": {
+        "welcome": "Welcome to Fin-Mate",
+        "good_morning": "Good Morning",
+        "dashboard": "Dashboard",
+        "settings": "Settings",
+        "change_language": "Change Language",
+        "logout": "Logout"
+    }
+}
