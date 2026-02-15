@@ -1,6 +1,6 @@
-import { Dot, Landmark, Lock, PlusCircle } from "lucide-react"
-import { Button } from "./ui/button"
-import { useNavigate } from "@tanstack/react-router"
+import { Dot, Landmark, Lock, PlusCircle } from 'lucide-react'
+import { Button } from './ui/button'
+import { useNavigate } from '@tanstack/react-router'
 
 const BankAccount = () => {
   return (
@@ -22,9 +22,7 @@ const BankAccount = () => {
         </div>
         <div className="ml-auto flex flex-col">
           <div className="font-semibold text-black">$12,34,000.00</div>
-          <div className="ml-auto text-sm text-green-600 font-semibold">
-            Verified
-          </div>
+          <div className="ml-auto text-sm text-green-600 font-semibold">Verified</div>
         </div>
       </div>
     </>
@@ -44,10 +42,7 @@ export const BankAccounts = () => {
         <BankAccount />
         <BankAccount />
         <div className="p-4 w-full flex-wrap border rounded-xl sm:max-w-74 sm:flex items-center justify-center bg-slate-50 hidden">
-          <Button
-            variant={"ghost"}
-            onClick={() => navigate({ to: "/cards/addAccount" })}
-          >
+          <Button variant={'ghost'} onClick={() => navigate({ to: '/cards/addAccount' })}>
             <span>
               <PlusCircle />
             </span>
@@ -62,15 +57,14 @@ export const BankAccounts = () => {
           </div>
           <div className="font-semibold text-gray-700">ENCRYPTED & SECURE</div>
           <div className="text-xs text-gray-600 text-center">
-            We use 256-bit encryption to keep your data safe and never store
-            your login credentials.
+            We use 256-bit encryption to keep your data safe and never store your login credentials.
           </div>
         </div>
       </div>
       <div className="w-full p-2 mb-20 sm:hidden">
         <Button
           className="w-full font-semibold bg-blue-500"
-          onClick={() => navigate({ to: "/cards/addAccount" })}
+          onClick={() => navigate({ to: '/cards/addAccount' })}
         >
           <PlusCircle />
           Add New Account

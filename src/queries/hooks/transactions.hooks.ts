@@ -1,5 +1,5 @@
-import { useQuery } from "@tanstack/react-query"
-import { transactionOptions } from "../options/transaction.options"
+import { useQuery } from '@tanstack/react-query'
+import { transactionOptions } from '../options/transaction.options'
 
 export const useGetTransactions = (page: number, limit: number) => {
   return useQuery(transactionOptions(page, limit))

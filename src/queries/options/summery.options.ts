@@ -1,7 +1,7 @@
-import { queryOptions } from "@tanstack/react-query"
-import { getSummeryFn } from "../fn/summery.fn"
+import { queryOptions } from '@tanstack/react-query'
+import { getSummeryFn } from '../fn/summery.fn'
 
 export const getSummeryOptions = queryOptions({
-  queryKey: ["summery"],
+  queryKey: ['summery'],
   queryFn: getSummeryFn,
 })

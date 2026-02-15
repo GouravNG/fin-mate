@@ -1,10 +1,10 @@
 {
-    "common": {
-        "welcome": "Fin-Mate ಗೆ ಸುಸ್ವಾಗತ",
-        "good_morning": "ಶುಭೋದಯ",
-        "dashboard": "ಡ್ಯಾಶ್‌ಬೋರ್ಡ್",
-        "settings": "ಸೆಟ್ಟಿಂಗ್‌ಗಳು",
-        "change_language": "ಭಾಷೆಯನ್ನು ಬದಲಿಸಿ",
-        "logout": "ಲಾಗ್ ಔಟ್"
-    }
+  "common": {
+    "welcome": "Fin-Mate ಗೆ ಸುಸ್ವಾಗತ",
+    "good_morning": "ಶುಭೋದಯ",
+    "dashboard": "ಡ್ಯಾಶ್‌ಬೋರ್ಡ್",
+    "settings": "ಸೆಟ್ಟಿಂಗ್‌ಗಳು",
+    "change_language": "ಭಾಷೆಯನ್ನು ಬದಲಿಸಿ",
+    "logout": "ಲಾಗ್ ಔಟ್"
+  }
 }

@@ -1,8 +1,8 @@
-import { Bell } from "lucide-react"
-import { useTranslation } from "react-i18next"
-import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar"
-import { ModeToggle } from "./mode-toggle"
-import { LanguageSwitcher } from "./LanguageSwitcher"
+import { Bell } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
+import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar'
+import { ModeToggle } from './mode-toggle'
+import { LanguageSwitcher } from './LanguageSwitcher'
 
 type THeader = {
   username: string
@@ -23,9 +23,7 @@ const Header: React.FC<THeader> = ({ username }) => {
             </Avatar>
           </div>
           <div className="flex-1">
-            <p className="font-bold text-sm text-slate-600">
-              {t("common.good_morning")}
-            </p>
+            <p className="font-bold text-sm text-slate-600">{t('common.good_morning')}</p>
             <p className="font-semibold text-lg">{username}</p>
           </div>
         </div>

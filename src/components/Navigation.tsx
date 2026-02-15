@@ -1,5 +1,5 @@
-import { navigationData } from "./data/navigation.data"
-import { Link } from "@tanstack/react-router"
+import { navigationData } from './data/navigation.data'
+import { Link } from '@tanstack/react-router'
 
 const Navigation = () => {
   return (

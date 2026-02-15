@@ -1,10 +1,10 @@
 {
-    "common": {
-        "welcome": "Fin-Mate에 오신 것을 환영합니다",
-        "good_morning": "좋은 아침입니다",
-        "dashboard": "대시보드",
-        "settings": "설정",
-        "change_language": "언어 변경",
-        "logout": "로그아웃"
-    }
+  "common": {
+    "welcome": "Fin-Mate에 오신 것을 환영합니다",
+    "good_morning": "좋은 아침입니다",
+    "dashboard": "대시보드",
+    "settings": "설정",
+    "change_language": "언어 변경",
+    "logout": "로그아웃"
+  }
 }

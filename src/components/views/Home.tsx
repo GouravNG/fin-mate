@@ -1,11 +1,8 @@
-import {
-  useBudgetUtilization,
-  useGetSummery,
-} from "@/queries/hooks/summery.hooks"
-import HeroCard from "../HeroCards"
-import BudgetCard from "../BudgetCard"
-import QuickAction from "../QuickAction"
-import { RecentTransactions } from "../Recent-Transactions"
+import { useBudgetUtilization, useGetSummery } from '@/queries/hooks/summery.hooks'
+import HeroCard from '../HeroCards'
+import BudgetCard from '../BudgetCard'
+import QuickAction from '../QuickAction'
+import { RecentTransactions } from '../Recent-Transactions'
 
 export const Home = () => {
   const { data, error, isLoading } = useGetSummery()
@@ -26,7 +23,7 @@ export const Home = () => {
           utilizationPercent={parseInt(budgetUtilization!)}
         />
         <QuickAction />
-        <RecentTransactions/>
+        <RecentTransactions />
       </>
     )
 }

@@ -1,8 +1,8 @@
-import { Card, CardContent, CardHeader, CardTitle } from "./ui/card"
-import { Button } from "./ui/button"
-import { quickActions } from "./data/quickaction.data"
-import { useIsMobile } from "@/hooks/use-mobile"
-import { Ellipsis } from "lucide-react"
+import { Card, CardContent, CardHeader, CardTitle } from './ui/card'
+import { Button } from './ui/button'
+import { quickActions } from './data/quickaction.data'
+import { useIsMobile } from '@/hooks/use-mobile'
+import { Ellipsis } from 'lucide-react'
 
 const QuickAction = () => {
   const isMobile = useIsMobile()
@@ -15,10 +15,7 @@ const QuickAction = () => {
         <CardContent className="flex items-center justify-between">
           {quickActions.slice(0, isMobile ? 3 : 6).map((qa, k) => {
             return (
-              <div
-                className="flex flex-col items-center justify-center"
-                key={qa.title + k}
-              >
+              <div className="flex flex-col items-center justify-center" key={qa.title + k}>
                 <Button className="w-14 h-14 bg-blue-100 hover:cursor-pointer hover:bg-blue-200">
                   <qa.icon className="text-blue-700" />
                 </Button>
