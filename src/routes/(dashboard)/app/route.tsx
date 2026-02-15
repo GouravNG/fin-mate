@@ -1,8 +1,8 @@
-import Header from "@/components/header"
-import Navigation from "@/components/Navigation"
-import { Outlet, createFileRoute } from "@tanstack/react-router"
+import Header from '@/components/header'
+import Navigation from '@/components/Navigation'
+import { Outlet, createFileRoute } from '@tanstack/react-router'
 
-export const Route = createFileRoute("/(dashboard)/app")({
+export const Route = createFileRoute('/(dashboard)/app')({
   component: AuthLayout,
 })
 

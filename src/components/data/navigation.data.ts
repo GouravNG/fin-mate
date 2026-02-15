@@ -1,25 +1,25 @@
-import type { TNavigation } from "@/types/component.types"
-import { CreditCard, Home, Settings, Wallet } from "lucide-react"
+import type { TNavigation } from '@/types/component.types'
+import { CreditCard, Home, Settings, Wallet } from 'lucide-react'
 
 export const navigationData: TNavigation[] = [
   {
-    title: "Home",
+    title: 'Home',
     icon: Home,
-    href: "/app",
+    href: '/app',
   },
   {
-    title: "Wallet",
+    title: 'Wallet',
     icon: Wallet,
-    href: "/",
+    href: '/',
   },
   {
-    title: "Cards",
+    title: 'Cards',
     icon: CreditCard,
-    href: "/app/cards",
+    href: '/app/cards',
   },
   {
-    title: "Settings",
+    title: 'Settings',
     icon: Settings,
-    href: "/",
+    href: '/',
   },
 ]

@@ -1,12 +1,12 @@
-import { Moon, Sun, Monitor } from "lucide-react"
-import { usePreferenceStore, type TTheme } from "@/hooks/use-preference-store"
-import { Button } from "./ui/button"
+import { Moon, Sun, Monitor } from 'lucide-react'
+import { usePreferenceStore, type TTheme } from '@/hooks/use-preference-store'
+import { Button } from './ui/button'
 
 export const ModeToggle = () => {
   const { theme, setTheme } = usePreferenceStore()
 
   const toggleTheme = () => {
-    const themes: TTheme[] = ["light", "dark", "system"]
+    const themes: TTheme[] = ['light', 'dark', 'system']
     const currentIndex = themes.indexOf(theme)
     const nextIndex = (currentIndex + 1) % themes.length
     setTheme(themes[nextIndex])
@@ -14,9 +14,9 @@ export const ModeToggle = () => {
 
   const getIcon = () => {
     switch (theme) {
-      case "light":
+      case 'light':
         return <Sun className="h-5 w-5" />
-      case "dark":
+      case 'dark':
         return <Moon className="h-5 w-5" />
       default:
         return <Monitor className="h-5 w-5" />

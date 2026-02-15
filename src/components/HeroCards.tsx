@@ -1,19 +1,11 @@
-import { Eye, TrendingUp } from "lucide-react"
-import { Card, CardContent, CardHeader } from "./ui/card"
-import { Button } from "./ui/button"
-import { Badge } from "./ui/badge"
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarGroup,
-  AvatarGroupCount,
-  AvatarImage,
-} from "./ui/avatar"
-import type { THeroCard } from "@/types/component.types"
+import { Eye, TrendingUp } from 'lucide-react'
+import { Card, CardContent, CardHeader } from './ui/card'
+import { Button } from './ui/button'
+import { Badge } from './ui/badge'
+import { Avatar, AvatarFallback, AvatarGroup, AvatarGroupCount, AvatarImage } from './ui/avatar'
+import type { THeroCard } from '@/types/component.types'
 
-const HeroCardHeader: React.FC<Pick<THeroCard, "totalBalance">> = ({
-  totalBalance,
-}) => {
+const HeroCardHeader: React.FC<Pick<THeroCard, 'totalBalance'>> = ({ totalBalance }) => {
   return (
     <CardHeader className="flex flex-row items-start justify-between">
       <div>
@@ -25,9 +17,7 @@ const HeroCardHeader: React.FC<Pick<THeroCard, "totalBalance">> = ({
   )
 }
 
-const HerocardBadgeLogic: React.FC<Pick<THeroCard, "categories">> = ({
-  categories,
-}) => {
+const HerocardBadgeLogic: React.FC<Pick<THeroCard, 'categories'>> = ({ categories }) => {
   return (
     <AvatarGroup>
       {categories.slice(0, 2).map((ctg, k) => {
@@ -46,7 +36,7 @@ const HerocardBadgeLogic: React.FC<Pick<THeroCard, "categories">> = ({
 }
 
 const HeroCardContent: React.FC<
-  Pick<THeroCard, "trendPercent"> & { children: React.ReactNode }
+  Pick<THeroCard, 'trendPercent'> & { children: React.ReactNode }
 > = ({ trendPercent, children }) => {
   return (
     <CardContent className="flex flex-col items-center justify-between gap-4 pt-2">
@@ -67,11 +57,7 @@ const HeroCardContent: React.FC<
   )
 }
 
-const HeroCard: React.FC<THeroCard> = ({
-  categories,
-  totalBalance,
-  trendPercent,
-}) => {
+const HeroCard: React.FC<THeroCard> = ({ categories, totalBalance, trendPercent }) => {
   return (
     <Card className="bg-blue-500 text-white text-lg">
       <HeroCardHeader totalBalance={totalBalance} />

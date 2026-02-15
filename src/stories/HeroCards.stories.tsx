@@ -1,13 +1,13 @@
-import type { Meta, StoryObj } from "@storybook/react-vite"
-import HeroCard from "@/components/HeroCards"
-import type { THeroCard } from "@/types/component.types"
+import type { Meta, StoryObj } from '@storybook/react-vite'
+import HeroCard from '@/components/HeroCards'
+import type { THeroCard } from '@/types/component.types'
 
 const meta: Meta<typeof HeroCard> = {
   component: HeroCard,
-  title: "Components/HeroCards",
-  tags: ["autodocs"],
+  title: 'Components/HeroCards',
+  tags: ['autodocs'],
   parameters: {
-    layout: "fullscreen",
+    layout: 'fullscreen',
   },
 }
 
@@ -19,23 +19,20 @@ const baseArgs: THeroCard = {
   trendPercent: 12,
   categories: [
     {
-      categoryName: "Shopping",
-      categoryImgSrc:
-        "https://api.dicebear.com/7.x/avataaars/svg?seed=Shopping",
+      categoryName: 'Shopping',
+      categoryImgSrc: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Shopping',
     },
     {
-      categoryName: "Food",
-      categoryImgSrc: "https://api.dicebear.com/7.x/avataaars/svg?seed=Food",
+      categoryName: 'Food',
+      categoryImgSrc: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Food',
     },
     {
-      categoryName: "Transport",
-      categoryImgSrc:
-        "https://api.dicebear.com/7.x/avataaars/svg?seed=Transport",
+      categoryName: 'Transport',
+      categoryImgSrc: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Transport',
     },
     {
-      categoryName: "Entertainment",
-      categoryImgSrc:
-        "https://api.dicebear.com/7.x/avataaars/svg?seed=Entertainment",
+      categoryName: 'Entertainment',
+      categoryImgSrc: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Entertainment',
     },
   ],
 }
@@ -80,14 +77,12 @@ export const ManyCategories: Story = {
     categories: [
       ...baseArgs.categories,
       {
-        categoryName: "Utilities",
-        categoryImgSrc:
-          "https://api.dicebear.com/7.x/avataaars/svg?seed=Utilities",
+        categoryName: 'Utilities',
+        categoryImgSrc: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Utilities',
       },
       {
-        categoryName: "Health",
-        categoryImgSrc:
-          "https://api.dicebear.com/7.x/avataaars/svg?seed=Health",
+        categoryName: 'Health',
+        categoryImgSrc: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Health',
       },
     ],
   },

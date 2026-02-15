@@ -5,31 +5,31 @@ import {
   Split,
   WavesArrowDown,
   WavesArrowUp,
-} from "lucide-react"
+} from 'lucide-react'
 
 export const quickActions = [
   {
-    title: "Send",
+    title: 'Send',
     icon: WavesArrowUp,
   },
   {
-    title: "Request",
+    title: 'Request',
     icon: WavesArrowDown,
   },
   {
-    title: "Split",
+    title: 'Split',
     icon: Split,
   },
   {
-    title: "Settings",
+    title: 'Settings',
     icon: Settings,
   },
   {
-    title: "Monthly Report",
+    title: 'Monthly Report',
     icon: HandCoins,
   },
   {
-    title: "Budget",
+    title: 'Budget',
     icon: BriefcaseBusiness,
   },
 ]

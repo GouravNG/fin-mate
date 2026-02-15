@@ -1,13 +1,13 @@
-import { Link } from "@tanstack/react-router"
-import { Card, CardContent, CardHeader, CardTitle } from "./ui/card"
-import { BadgeDollarSign, Ellipsis } from "lucide-react"
-import { Button } from "./ui/button"
-import { useGetTransactions } from "@/queries/hooks/transactions.hooks"
-import type { TransactionsResponse } from "@/types"
-import { getCategoryNameByCategoryId } from "@/utils/getCategoryNameByCategoryid"
-import { getIconByCategoryId } from "@/utils/getIconsByCategoryid"
-import { getEasyDate } from "@/utils/getEasyDate"
-import { Separator } from "./ui/separator"
+import { Link } from '@tanstack/react-router'
+import { Card, CardContent, CardHeader, CardTitle } from './ui/card'
+import { BadgeDollarSign, Ellipsis } from 'lucide-react'
+import { Button } from './ui/button'
+import { useGetTransactions } from '@/queries/hooks/transactions.hooks'
+import type { TransactionsResponse } from '@/types'
+import { getCategoryNameByCategoryId } from '@/utils/getCategoryNameByCategoryid'
+import { getIconByCategoryId } from '@/utils/getIconsByCategoryid'
+import { getEasyDate } from '@/utils/getEasyDate'
+import { Separator } from './ui/separator'
 
 const Transactions: React.FC<TransactionsResponse[0]> = ({
   amount,
@@ -36,23 +36,21 @@ const Transactions: React.FC<TransactionsResponse[0]> = ({
           <div className="flex text-slate-600">
             <p className="pr-1 text-nowrap whitespace-nowrap">{categoryName}</p>
             <p className="text-red-500 font-extrabold">-</p>
-            <p className="pl-1 text-nowrap whitespace-nowrap">
-              {getEasyDate(date)}
-            </p>
+            <p className="pl-1 text-nowrap whitespace-nowrap">{getEasyDate(date)}</p>
           </div>
         </div>
         <div
-          className={`flex-1 text-right font-bold ${type === "income" ? "text-green-400" : "text-slate-950"}`}
+          className={`flex-1 text-right font-bold ${type === 'income' ? 'text-green-400' : 'text-slate-950'}`}
         >
-          {type === "income" ? "+" : "-"}${amount}
+          {type === 'income' ? '+' : '-'}${amount}
         </div>
         <div className="hidden md:block">
-          <Button variant={"ghost"} className="hover:cursor-pointer">
+          <Button variant={'ghost'} className="hover:cursor-pointer">
             View More
           </Button>
         </div>
         <div className="hidden md:block">
-          <Button variant={"ghost"} className="hover:cursor-pointer">
+          <Button variant={'ghost'} className="hover:cursor-pointer">
             <Ellipsis />
           </Button>
         </div>
@@ -74,9 +72,7 @@ export const RecentTransactions = () => {
         <Card className="shadow-none border-none">
           <CardHeader>
             <div className="flex items-center justify-between">
-              <CardTitle className="font-semibold text-lg">
-                Recent Transactions
-              </CardTitle>
+              <CardTitle className="font-semibold text-lg">Recent Transactions</CardTitle>
               <Link to="/">
                 <p className="text-sm text-blue-500 font-semibold">See All</p>
               </Link>

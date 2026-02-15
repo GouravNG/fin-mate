@@ -1,6 +1,6 @@
-import type { LucideIcon } from "lucide-react"
-import type { CardsResponse } from "./api.types"
-import type { FileRoutesByTo } from "@/routeTree.gen"
+import type { LucideIcon } from 'lucide-react'
+import type { CardsResponse } from './api.types'
+import type { FileRoutesByTo } from '@/routeTree.gen'
 
 export type TNavigation = {
   title: string

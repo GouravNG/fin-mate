@@ -1,5 +1,5 @@
-import { BankAccounts } from "../BankAccounts"
-import { UserCardList } from "../UserCard"
+import { BankAccounts } from '../BankAccounts'
+import { UserCardList } from '../UserCard'
 
 export const CardAndAccounts = () => {
   return (
