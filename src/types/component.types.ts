@@ -1,10 +1,11 @@
 import type { LucideIcon } from "lucide-react"
 import type { CardsResponse } from "./api.types"
+import type { FileRoutesByTo } from "@/routeTree.gen"
 
 export type TNavigation = {
   title: string
   icon: LucideIcon
-  href: string
+  href: keyof FileRoutesByTo
 }
 
 export type THeroCard = {
