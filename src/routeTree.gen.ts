@@ -9,86 +9,266 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as IndexRouteImport } from './routes/index'
-import { Route as CardsIndexRouteImport } from './routes/cards/index'
-import { Route as CardsAddAccountRouteImport } from './routes/cards/addAccount'
+import { Route as publicRouteRouteImport } from './routes/(public)/route'
+import { Route as dashboardRouteRouteImport } from './routes/(dashboard)/route'
+import { Route as authRouteRouteImport } from './routes/(auth)/route'
+import { Route as publicIndexRouteImport } from './routes/(public)/index'
+import { Route as dashboardAppRouteRouteImport } from './routes/(dashboard)/app/route'
+import { Route as dashboardAppIndexRouteImport } from './routes/(dashboard)/app/index'
+import { Route as dashboardCardsAddAccountRouteImport } from './routes/(dashboard)/cards/addAccount'
+import { Route as authAuthSignupRouteImport } from './routes/(auth)/auth/signup'
+import { Route as authAuthLoginRouteImport } from './routes/(auth)/auth/login'
+import { Route as dashboardAppCardsIndexRouteImport } from './routes/(dashboard)/app/cards/index'
 
-const IndexRoute = IndexRouteImport.update({
+const publicRouteRoute = publicRouteRouteImport.update({
+  id: '/(public)',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const dashboardRouteRoute = dashboardRouteRouteImport.update({
+  id: '/(dashboard)',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const authRouteRoute = authRouteRouteImport.update({
+  id: '/(auth)',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const publicIndexRoute = publicIndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => rootRouteImport,
+  getParentRoute: () => publicRouteRoute,
 } as any)
-const CardsIndexRoute = CardsIndexRouteImport.update({
+const dashboardAppRouteRoute = dashboardAppRouteRouteImport.update({
+  id: '/app',
+  path: '/app',
+  getParentRoute: () => dashboardRouteRoute,
+} as any)
+const dashboardAppIndexRoute = dashboardAppIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => dashboardAppRouteRoute,
+} as any)
+const dashboardCardsAddAccountRoute =
+  dashboardCardsAddAccountRouteImport.update({
+    id: '/cards/addAccount',
+    path: '/cards/addAccount',
+    getParentRoute: () => dashboardRouteRoute,
+  } as any)
+const authAuthSignupRoute = authAuthSignupRouteImport.update({
+  id: '/auth/signup',
+  path: '/auth/signup',
+  getParentRoute: () => authRouteRoute,
+} as any)
+const authAuthLoginRoute = authAuthLoginRouteImport.update({
+  id: '/auth/login',
+  path: '/auth/login',
+  getParentRoute: () => authRouteRoute,
+} as any)
+const dashboardAppCardsIndexRoute = dashboardAppCardsIndexRouteImport.update({
   id: '/cards/',
   path: '/cards/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CardsAddAccountRoute = CardsAddAccountRouteImport.update({
-  id: '/cards/addAccount',
-  path: '/cards/addAccount',
-  getParentRoute: () => rootRouteImport,
+  getParentRoute: () => dashboardAppRouteRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
-  '/cards/addAccount': typeof CardsAddAccountRoute
-  '/cards/': typeof CardsIndexRoute
+  '/app': typeof dashboardAppRouteRouteWithChildren
+  '/': typeof publicIndexRoute
+  '/auth/login': typeof authAuthLoginRoute
+  '/auth/signup': typeof authAuthSignupRoute
+  '/cards/addAccount': typeof dashboardCardsAddAccountRoute
+  '/app/': typeof dashboardAppIndexRoute
+  '/app/cards/': typeof dashboardAppCardsIndexRoute
 }
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute
-  '/cards/addAccount': typeof CardsAddAccountRoute
-  '/cards': typeof CardsIndexRoute
+  '/': typeof publicIndexRoute
+  '/auth/login': typeof authAuthLoginRoute
+  '/auth/signup': typeof authAuthSignupRoute
+  '/cards/addAccount': typeof dashboardCardsAddAccountRoute
+  '/app': typeof dashboardAppIndexRoute
+  '/app/cards': typeof dashboardAppCardsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
-  '/': typeof IndexRoute
-  '/cards/addAccount': typeof CardsAddAccountRoute
-  '/cards/': typeof CardsIndexRoute
+  '/(auth)': typeof authRouteRouteWithChildren
+  '/(dashboard)': typeof dashboardRouteRouteWithChildren
+  '/(public)': typeof publicRouteRouteWithChildren
+  '/(dashboard)/app': typeof dashboardAppRouteRouteWithChildren
+  '/(public)/': typeof publicIndexRoute
+  '/(auth)/auth/login': typeof authAuthLoginRoute
+  '/(auth)/auth/signup': typeof authAuthSignupRoute
+  '/(dashboard)/cards/addAccount': typeof dashboardCardsAddAccountRoute
+  '/(dashboard)/app/': typeof dashboardAppIndexRoute
+  '/(dashboard)/app/cards/': typeof dashboardAppCardsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/cards/addAccount' | '/cards/'
+  fullPaths:
+    | '/app'
+    | '/'
+    | '/auth/login'
+    | '/auth/signup'
+    | '/cards/addAccount'
+    | '/app/'
+    | '/app/cards/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/cards/addAccount' | '/cards'
-  id: '__root__' | '/' | '/cards/addAccount' | '/cards/'
+  to:
+    | '/'
+    | '/auth/login'
+    | '/auth/signup'
+    | '/cards/addAccount'
+    | '/app'
+    | '/app/cards'
+  id:
+    | '__root__'
+    | '/(auth)'
+    | '/(dashboard)'
+    | '/(public)'
+    | '/(dashboard)/app'
+    | '/(public)/'
+    | '/(auth)/auth/login'
+    | '/(auth)/auth/signup'
+    | '/(dashboard)/cards/addAccount'
+    | '/(dashboard)/app/'
+    | '/(dashboard)/app/cards/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
-  CardsAddAccountRoute: typeof CardsAddAccountRoute
-  CardsIndexRoute: typeof CardsIndexRoute
+  authRouteRoute: typeof authRouteRouteWithChildren
+  dashboardRouteRoute: typeof dashboardRouteRouteWithChildren
+  publicRouteRoute: typeof publicRouteRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/': {
-      id: '/'
+    '/(public)': {
+      id: '/(public)'
+      path: ''
+      fullPath: ''
+      preLoaderRoute: typeof publicRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(dashboard)': {
+      id: '/(dashboard)'
+      path: ''
+      fullPath: ''
+      preLoaderRoute: typeof dashboardRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(auth)': {
+      id: '/(auth)'
+      path: ''
+      fullPath: ''
+      preLoaderRoute: typeof authRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(public)/': {
+      id: '/(public)/'
       path: '/'
       fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
+      preLoaderRoute: typeof publicIndexRouteImport
+      parentRoute: typeof publicRouteRoute
     }
-    '/cards/': {
-      id: '/cards/'
-      path: '/cards'
-      fullPath: '/cards/'
-      preLoaderRoute: typeof CardsIndexRouteImport
-      parentRoute: typeof rootRouteImport
+    '/(dashboard)/app': {
+      id: '/(dashboard)/app'
+      path: '/app'
+      fullPath: '/app'
+      preLoaderRoute: typeof dashboardAppRouteRouteImport
+      parentRoute: typeof dashboardRouteRoute
     }
-    '/cards/addAccount': {
-      id: '/cards/addAccount'
+    '/(dashboard)/app/': {
+      id: '/(dashboard)/app/'
+      path: '/'
+      fullPath: '/app/'
+      preLoaderRoute: typeof dashboardAppIndexRouteImport
+      parentRoute: typeof dashboardAppRouteRoute
+    }
+    '/(dashboard)/cards/addAccount': {
+      id: '/(dashboard)/cards/addAccount'
       path: '/cards/addAccount'
       fullPath: '/cards/addAccount'
-      preLoaderRoute: typeof CardsAddAccountRouteImport
-      parentRoute: typeof rootRouteImport
+      preLoaderRoute: typeof dashboardCardsAddAccountRouteImport
+      parentRoute: typeof dashboardRouteRoute
+    }
+    '/(auth)/auth/signup': {
+      id: '/(auth)/auth/signup'
+      path: '/auth/signup'
+      fullPath: '/auth/signup'
+      preLoaderRoute: typeof authAuthSignupRouteImport
+      parentRoute: typeof authRouteRoute
+    }
+    '/(auth)/auth/login': {
+      id: '/(auth)/auth/login'
+      path: '/auth/login'
+      fullPath: '/auth/login'
+      preLoaderRoute: typeof authAuthLoginRouteImport
+      parentRoute: typeof authRouteRoute
+    }
+    '/(dashboard)/app/cards/': {
+      id: '/(dashboard)/app/cards/'
+      path: '/cards'
+      fullPath: '/app/cards/'
+      preLoaderRoute: typeof dashboardAppCardsIndexRouteImport
+      parentRoute: typeof dashboardAppRouteRoute
     }
   }
 }
 
+interface authRouteRouteChildren {
+  authAuthLoginRoute: typeof authAuthLoginRoute
+  authAuthSignupRoute: typeof authAuthSignupRoute
+}
+
+const authRouteRouteChildren: authRouteRouteChildren = {
+  authAuthLoginRoute: authAuthLoginRoute,
+  authAuthSignupRoute: authAuthSignupRoute,
+}
+
+const authRouteRouteWithChildren = authRouteRoute._addFileChildren(
+  authRouteRouteChildren,
+)
+
+interface dashboardAppRouteRouteChildren {
+  dashboardAppIndexRoute: typeof dashboardAppIndexRoute
+  dashboardAppCardsIndexRoute: typeof dashboardAppCardsIndexRoute
+}
+
+const dashboardAppRouteRouteChildren: dashboardAppRouteRouteChildren = {
+  dashboardAppIndexRoute: dashboardAppIndexRoute,
+  dashboardAppCardsIndexRoute: dashboardAppCardsIndexRoute,
+}
+
+const dashboardAppRouteRouteWithChildren =
+  dashboardAppRouteRoute._addFileChildren(dashboardAppRouteRouteChildren)
+
+interface dashboardRouteRouteChildren {
+  dashboardAppRouteRoute: typeof dashboardAppRouteRouteWithChildren
+  dashboardCardsAddAccountRoute: typeof dashboardCardsAddAccountRoute
+}
+
+const dashboardRouteRouteChildren: dashboardRouteRouteChildren = {
+  dashboardAppRouteRoute: dashboardAppRouteRouteWithChildren,
+  dashboardCardsAddAccountRoute: dashboardCardsAddAccountRoute,
+}
+
+const dashboardRouteRouteWithChildren = dashboardRouteRoute._addFileChildren(
+  dashboardRouteRouteChildren,
+)
+
+interface publicRouteRouteChildren {
+  publicIndexRoute: typeof publicIndexRoute
+}
+
+const publicRouteRouteChildren: publicRouteRouteChildren = {
+  publicIndexRoute: publicIndexRoute,
+}
+
+const publicRouteRouteWithChildren = publicRouteRoute._addFileChildren(
+  publicRouteRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
-  IndexRoute: IndexRoute,
-  CardsAddAccountRoute: CardsAddAccountRoute,
-  CardsIndexRoute: CardsIndexRoute,
+  authRouteRoute: authRouteRouteWithChildren,
+  dashboardRouteRoute: dashboardRouteRouteWithChildren,
+  publicRouteRoute: publicRouteRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -5,21 +5,21 @@ export const navigationData: TNavigation[] = [
   {
     title: "Home",
     icon: Home,
-    href: "/",
+    href: "/app",
   },
   {
     title: "Wallet",
     icon: Wallet,
-    href: "/wallet",
+    href: "/",
   },
   {
     title: "Cards",
     icon: CreditCard,
-    href: "/cards",
+    href: "/app/cards",
   },
   {
     title: "Settings",
     icon: Settings,
-    href: "/settings",
+    href: "/",
   },
 ]
