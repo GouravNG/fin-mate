@@ -1,12 +1,5 @@
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "./ui/card"
-import { Progress } from "./ui/progress"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './ui/card'
+import { Progress } from './ui/progress'
 
 type TBudget = {
   budget: number
@@ -14,11 +7,7 @@ type TBudget = {
   utilizationPercent: number
 }
 
-const BudgetCard: React.FC<TBudget> = ({
-  budget,
-  utlisedBudget,
-  utilizationPercent,
-}) => {
+const BudgetCard: React.FC<TBudget> = ({ budget, utlisedBudget, utilizationPercent }) => {
   return (
     <>
       <Card className="my-2 bg-slate-50">
@@ -26,14 +15,10 @@ const BudgetCard: React.FC<TBudget> = ({
           <CardHeader className="flex items-start justify-between">
             <div>
               <CardTitle className="font-bold">Montly Spend</CardTitle>
-              <CardDescription className="text-xs/loose">
-                Budget: ${budget}
-              </CardDescription>
+              <CardDescription className="text-xs/loose">Budget: ${budget}</CardDescription>
             </div>
             <div>
-              <span className="text-2xl font-semibold text-blue-500">
-                ${budget}
-              </span>
+              <span className="text-2xl font-semibold text-blue-500">${budget}</span>
             </div>
           </CardHeader>
         </div>
