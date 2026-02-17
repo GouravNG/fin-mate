@@ -6,5 +6,19 @@
     "settings": "ಸೆಟ್ಟಿಂಗ್‌ಗಳು",
     "change_language": "ಭಾಷೆಯನ್ನು ಬದಲಿಸಿ",
     "logout": "ಲಾಗ್ ಔಟ್"
+  },
+  "login": {
+    "tagline": "ನಿಮ್ಮ ಸಂಪತ್ತಿಗೆ ಸುರಕ್ಷಿತ ಪ್ರವೇಶ",
+    "email_address": "ಇಮೇಲ್ ವಿಳಾಸ",
+    "email_placeholder": "ನಿಮ್ಮ ಇಮೇಲ್ ನಮೂದಿಸಿ",
+    "password": "ಪಾಸ್‌ವರ್ಡ್",
+    "password_placeholder": "ಪಾಸ್‌ವರ್ಡ್ ನಮೂದಿಸಿ",
+    "forgot_password": "ಪಾಸ್‌ವರ್ಡ್ ಮರೆತುಬಿಟ್ಟಿರಾ?",
+    "login_button": "ಲಾಗಿನ್",
+    "or_continue_with": "ಅಥವಾ ಜಾರಿ ಇಡಿ",
+    "google": "ಗೂಗಲ್",
+    "apple": "ಆಪಲ್",
+    "no_account": "ಖಾತೆ ಇಲ್ಲವೇ?",
+    "create_account": "ಖಾತೆ ರಚಿಸಿ"
   }
 }
