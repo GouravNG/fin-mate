@@ -6,6 +6,13 @@ import LanguageDetector from 'i18next-browser-languagedetector'
 // Import English translations as a reference for types
 import enTranslation from '../public/locales/en/translation.json'
 
+export const supportedLanguages = [
+  { code: 'en', name: 'English' },
+  { code: 'hi', name: 'Hindi' },
+  { code: 'kn', name: 'Kannada' },
+  { code: 'ko', name: 'Korean' },
+]
+
 i18n
   .use(HttpBackend)
   .use(LanguageDetector)
