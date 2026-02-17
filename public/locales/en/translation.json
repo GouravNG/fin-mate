@@ -6,5 +6,22 @@
     "settings": "Settings",
     "change_language": "Change Language",
     "logout": "Logout"
+  },
+  "login": {
+    "tagline": "Secure Access to your wealth",
+    "email_address": "Email Address",
+    "email_placeholder": "name@example.com",
+    "password": "Password",
+    "password_placeholder": "••••••••",
+    "forgot_password": "Forgot password?",
+    "login_button": "Login",
+    "show_password": "Show password",
+    "hide_password": "Hide password",
+    "toggle_password": "Toggle password visibility",
+    "or_continue_with": "Or continue with",
+    "google": "Google",
+    "apple": "Apple",
+    "no_account": "Don't have an account?",
+    "create_account": "Create an account"
   }
 }
