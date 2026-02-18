@@ -34,7 +34,7 @@ const LoginHeader = ({ children }: LoginType) => {
 const LoginContainer = ({ children }: LoginType) => {
   return (
     <div className="w-full h-screen flex items-center justify-center bg-background">
-      <div className="min-w-80 sm:min-w-96 bg-white border rounded-lg p-4 space-y-4 scale-90">
+      <div className="min-w-80 sm:min-w-96 bg-card border rounded-lg p-4 space-y-4 scale-90">
         {children}
       </div>
     </div>

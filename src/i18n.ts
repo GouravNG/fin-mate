@@ -11,7 +11,7 @@ export const supportedLanguages = [
   { code: 'hi', name: 'Hindi' },
   { code: 'kn', name: 'Kannada' },
   { code: 'ko', name: 'Korean' },
-]
+] as const
 
 i18n
   .use(HttpBackend)
@@ -34,7 +34,7 @@ i18n
       caches: ['localStorage', 'cookie'],
     },
 
-    supportedLngs: ['en', 'hi', 'kn', 'ko'],
+    supportedLngs: supportedLanguages.map((lang) => lang.code),
 
     // Default namespace
     defaultNS: 'translation',

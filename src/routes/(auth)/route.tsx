@@ -1,4 +1,3 @@
-import { Button } from '@/components/ui/button'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -22,11 +21,13 @@ function AuthLayout() {
       <Outlet />
       <div className="absolute bottom-0 right-0 p-2">
         <DropdownMenu>
-          <DropdownMenuTrigger  className="border flex items-center justify-center p-1 rounded-md">
-            <Button>
-              <Languages />
-            </Button>
-            <span className="bg-white px-2 rounded-sm text-center">{i18n.resolvedLanguage}</span>
+          <DropdownMenuTrigger className="border flex items-center justify-center p-1 rounded-md">
+            <div className="bg-primary text-primary-foreground hover:bg-primary/90 p-1 rounded-md">
+              <Languages size="15" className="m-1" />
+            </div>
+            <span className="bg-background px-2 rounded-sm text-center">
+              {i18n.resolvedLanguage}
+            </span>
           </DropdownMenuTrigger>
           <DropdownMenuContent>
             <DropdownMenuGroup>

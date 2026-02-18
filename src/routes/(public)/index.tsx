@@ -35,7 +35,7 @@ function RouteComponent() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <div className="text-2xl font-pop-bold text-primary">FinMate</div>
           <div className="flex gap-4">
-            <Button variant="ghost" onClick={() => navigate({ to: '/auth/login' })}>
+            <Button variant="outline" className='hover:text-foreground' onClick={() => navigate({ to: '/auth/login' })}>
               Login
             </Button>
             <Button
@@ -72,8 +72,8 @@ function RouteComponent() {
                 Get Started
                 <ArrowRight className="ml-2 w-4 h-4" />
               </Button>
-              <Button size="lg" variant="outline" onClick={() => navigate({ to: '/auth/login' })}>
-                Sign In
+              <Button size="lg" variant="outline" className='hover:text-foreground' onClick={() => navigate({ to: '/auth/login' })}>
+                Login
               </Button>
             </div>
           </div>
