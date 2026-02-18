@@ -2,8 +2,17 @@ import { faker } from '@faker-js/faker'
 import { getRandomCategoryIdByType } from './helpers/randomCategory'
 
 export const mocks = {
+  auth:{
+    login:{
+      getUrl: () => 'https://api.example.com/auth/login',
+      getMockData: () => ({
+        username:faker.person.firstName(),
+        token:faker.string.alphanumeric({ length: 16 }),
+      })
+    }
+  },
   user: {
-    getUrl: () => 'https://api.example.com/summery',
+    getUrl: () => 'https://api.example.com/summary',
     getMockData: () => {
       const total = faker.number.int({ min: 5000, max: 20000 })
       return {

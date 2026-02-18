@@ -7,8 +7,8 @@ export const handlers = [
   // Mock for transactions endpoint
   http.get(mocks.transactions.getUrl(), ({ request }) => {
     const url = new URL(request.url)
-    const page = parseInt(url.searchParams.get('page') || '1')
-    const limit = parseInt(url.searchParams.get('limit') || '10')
+    const page = Number.parseInt(url.searchParams.get('page') || '1')
+    const limit = Number.parseInt(url.searchParams.get('limit') || '10')
     return HttpResponse.json(mocks.transactions.getTransactions(page, limit))
   }),
 
@@ -16,4 +16,8 @@ export const handlers = [
   http.get(mocks.accounts.cards.getUrl(), () =>
     HttpResponse.json(mocks.accounts.cards.getMockData()),
   ),
+
+  http.post(mocks.auth.login.getUrl(), () => {
+    return HttpResponse.json(mocks.auth.login.getMockData())
+  }),
 ]
