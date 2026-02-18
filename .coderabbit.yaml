@@ -1,0 +1,6 @@
+reviews:
+  path_filters:
+    - '!**/components/ui/**'
+    - '!**/node_modules/**'
+    - '!**/*.test.ts'
+    - '!**/dist/**'
