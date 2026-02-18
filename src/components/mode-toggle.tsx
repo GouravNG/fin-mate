@@ -1,5 +1,5 @@
 import { Moon, Sun, Monitor } from 'lucide-react'
-import { usePreferenceStore, type TTheme } from '@/hooks/use-preference-store'
+import { usePreferenceStore, type TTheme } from '@/store/use-preference-store'
 import { Button } from './ui/button'
 
 export const ModeToggle = () => {

@@ -6,12 +6,23 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
 import { supportedLanguages } from '@/i18n'
-import { Outlet, createFileRoute } from '@tanstack/react-router'
+import { Outlet, createFileRoute, redirect } from '@tanstack/react-router'
 import { Languages } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 
 export const Route = createFileRoute('/(auth)')({
   component: AuthLayout,
+  validateSearch: (search: Record<string, unknown>): { redirect?: string } => {
+    return {
+      redirect: typeof search.redirect === 'string' ? search.redirect : undefined,
+    }
+  },
+
+  beforeLoad: ({ context, search }) => {
+    if (context.auth.userToken) {
+      throw redirect({ to: search.redirect || '/app' })
+    }
+  },
 })
 
 function AuthLayout() {
@@ -33,7 +44,10 @@ function AuthLayout() {
             <DropdownMenuGroup>
               {supportedLanguages.map((lng, k) => {
                 return (
-                  <DropdownMenuItem key={k} onClick={() => i18n.changeLanguage(lng.code)}>
+                  <DropdownMenuItem
+                    key={lng.code + k}
+                    onClick={() => i18n.changeLanguage(lng.code)}
+                  >
                     {lng.name}
                   </DropdownMenuItem>
                 )

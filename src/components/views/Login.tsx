@@ -1,3 +1,4 @@
+import { useLogin } from '@/queries/hooks/auth.hooks'
 import LoginForm from '../forms/Login.form'
 import Logo from '../Logo'
 import { SSOButton, SSOButtonGroup } from '../SSO-Button'
@@ -43,6 +44,7 @@ const LoginContainer = ({ children }: LoginType) => {
 
 const Login = () => {
   const { t } = useTranslation()
+  const { mutate, isPending } = useLogin()
   return (
     <LoginContainer>
       <LoginHeader>
@@ -52,7 +54,7 @@ const Login = () => {
       </LoginHeader>
 
       <LoginContent>
-        <LoginForm disableSubmit={false} loginSubmitFn={(e) => console.log(e)} />
+        <LoginForm disableSubmit={isPending} loginSubmitFn={(e) => mutate(e)} />
       </LoginContent>
 
       <LoginFooter>

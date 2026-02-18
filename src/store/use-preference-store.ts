@@ -15,7 +15,7 @@ export const usePreferenceStore = create<PreferenceState>()(
       setTheme: (theme) => set({ theme }),
     }),
     {
-      name: 'fin-mate-preferences',
+      name: 'user-preferences',
     },
   ),
 )
