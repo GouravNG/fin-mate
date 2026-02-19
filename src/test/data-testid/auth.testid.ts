@@ -1,0 +1,15 @@
+export const TEST_IDS = {
+  form: 'signup-form',
+  nameInput: 'signup-name-input',
+  emailInput: 'signup-email-input',
+  passwordInput: 'signup-password-input',
+  confirmPasswordInput: 'signup-confirm-password-input',
+  passwordToggle: 'signup-password-toggle',
+  confirmPasswordToggle: 'signup-confirm-password-toggle',
+  submitButton: 'signup-submit-button',
+  loginLink: 'signup-login-link',
+  nameError: 'signup-name-error',
+  emailError: 'signup-email-error',
+  passwordError: 'signup-password-error',
+  confirmPasswordError: 'signup-confirm-password-error',
+}
