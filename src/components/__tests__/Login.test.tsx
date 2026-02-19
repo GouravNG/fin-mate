@@ -3,7 +3,7 @@ import { userEvent } from '@testing-library/user-event'
 import { describe, expect, test, vi, beforeEach } from 'vitest'
 import LoginForm from '@/components/forms/Login.form'
 import { type SubmitHandler } from 'react-hook-form'
-import { type LoginFormData } from '@/schemas/login.schema'
+import { type LoginFormData } from '@/schemas/auth.schema'
 import { render, waitFor, screen } from '@testing-library/react'
 
 const mockLoginSubmitFn: SubmitHandler<LoginFormData> = vi.fn()

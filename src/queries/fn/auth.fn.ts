@@ -1,5 +1,5 @@
 import apiClient from '@/configs/axios.config'
-import type { LoginFormData } from '@/schemas/login.schema'
+import type { LoginFormData } from '@/schemas/auth.schema'
 import type { AuthResponse } from '@/types'
 
 export const loginFn = async (payload: LoginFormData) => {
