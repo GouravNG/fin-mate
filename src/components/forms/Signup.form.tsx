@@ -41,10 +41,10 @@ const SignupForm = ({
   }
 
   return (
-    <Card className="border-0 shadow-none">
+    <Card className="border-0 shadow-none py-4">
       <CardContent>
         <form onSubmit={form.handleSubmit(signupSubmitFn)} data-testid={TEST_IDS.form}>
-          <FieldGroup>
+          <FieldGroup className="gap-3">
             {/* USERNAME */}
             <Controller
               name="username"
