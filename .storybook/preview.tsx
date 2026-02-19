@@ -6,10 +6,22 @@ import {
   createRouter,
   RouterProvider,
 } from '@tanstack/react-router'
+import { QueryClientProvider } from '@tanstack/react-query'
 import '../src/index.css'
 import i18n, { supportedLanguages } from '../src/i18n'
 import { Suspense, useEffect, useMemo } from 'react'
 import { I18nextProvider } from 'react-i18next'
+import { viTestQueryClient } from '../src/configs/query.config'
+
+/* ============================================================
+   QUERY CLIENT DECORATOR
+============================================================ */
+
+const withQueryClient: Decorator = (Story) => (
+  <QueryClientProvider client={viTestQueryClient}>
+    <Story />
+  </QueryClientProvider>
+)
 
 /* ============================================================
    I18N DECORATOR
@@ -34,7 +46,6 @@ const withI18next: Decorator = (Story, context) => {
 
 /* ============================================================
    ROUTER DECORATOR
-   (React Compiler Safe)
 ============================================================ */
 
 const withRouter: Decorator = (Story) => {
@@ -91,21 +102,10 @@ const preview: Preview = {
       test: 'todo',
     },
   },
-
-  /*
-    Decorators applied bottom-up.
-    So the LAST decorator becomes the OUTERMOST wrapper.
-
-    Final tree:
-
-      withThemeByClassName  ← OUTERMOST (dark class here)
-        withI18next
-          withRouter
-            Story
-  */
   decorators: [
     withRouter,
     withI18next,
+    withQueryClient,
     withThemeByClassName({
       themes: {
         light: '',
