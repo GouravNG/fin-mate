@@ -4,6 +4,7 @@ import LoginForm from '../forms/Login.form'
 import { useTranslation } from 'react-i18next'
 import { useLogin } from '@/queries/hooks/auth.hooks'
 import { AuthContainer, AuthContent, AuthFooter, AuthHeader } from '../AuthContainer'
+import { Link } from '@tanstack/react-router'
 
 const Login = () => {
   const { t } = useTranslation()
@@ -24,7 +25,7 @@ const Login = () => {
         <p className="text-center text-xs text-slate-500">
           {t('login.no_account')}
           <Button variant={'link'} className="text-xs font-semibold">
-            {t('login.create_account')}
+            <Link to='/auth/signup'>{t('login.create_account')}</Link>
           </Button>
         </p>
       </AuthFooter>

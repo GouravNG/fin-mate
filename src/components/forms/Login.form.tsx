@@ -5,7 +5,7 @@ import { standardSchemaResolver } from '@hookform/resolvers/standard-schema'
 import loginFormSchema, { type LoginFormData } from '@/schemas/auth.schema'
 import { Input } from '../ui/input'
 import { Button } from '../ui/button'
-import { EyeIcon, EyeOff, Lock, Mail } from 'lucide-react'
+import { EyeIcon, EyeOff, Loader2, Lock, Mail } from 'lucide-react'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link } from '@tanstack/react-router'
@@ -86,7 +86,7 @@ const LoginForm = ({
                   {fieldState.error && <FieldError errors={[fieldState.error]} />}
                   <FieldDescription className="flex">
                     <Button variant={'link'} className="text-sm ml-auto text-blue-800" asChild>
-                      <Link to="/">{t('login.forgot_password')}</Link>
+                      <Link to="/auth/signup">{t('login.forgot_password')}</Link>
                     </Button>
                   </FieldDescription>
                 </Field>
@@ -94,7 +94,7 @@ const LoginForm = ({
             />
           </FieldGroup>
           <Button type="submit" disabled={disableSubmit} className="w-full p-6">
-            {t('login.login_button')}
+            {disableSubmit ? <Loader2 className="animate-spin" /> : t('login.login_button')}
           </Button>
         </form>
       </CardContent>

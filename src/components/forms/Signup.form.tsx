@@ -4,7 +4,7 @@ import { Button } from '../ui/button'
 import { useTranslation } from 'react-i18next'
 import { Card, CardContent } from '../ui/card'
 import { TEST_IDS } from '@/test/data-testid/auth.testid'
-import { Mail, EyeOff, EyeIcon, Lock, User } from 'lucide-react'
+import { Mail, EyeOff, EyeIcon, Lock, User, Loader2 } from 'lucide-react'
 import { FieldGroup, Field, FieldLabel, FieldError } from '../ui/field'
 import { Controller, useForm, type SubmitHandler } from 'react-hook-form'
 import { standardSchemaResolver } from '@hookform/resolvers/standard-schema'
@@ -51,7 +51,7 @@ const SignupForm = ({
               control={form.control}
               render={({ field, fieldState }) => (
                 <Field>
-                  <FieldLabel className="text-xs">{t('', 'Username')}</FieldLabel>
+                  <FieldLabel className="text-xs">{t('signup.username')}</FieldLabel>
                   <div className="relative">
                     <span className="absolute top-0 left-0 h-full flex items-center">
                       <User className="w-8 p-1" />
@@ -59,7 +59,7 @@ const SignupForm = ({
                     <Input
                       {...field}
                       type="text"
-                      placeholder={t('', 'enter your unique username')}
+                      placeholder={t('signup.username_placeholder')}
                       className="pl-8 placeholder:text-slate-500"
                       data-testid={TEST_IDS.nameInput}
                       aria-describedby={fieldState.error ? ERROR_IDS.username : undefined}
@@ -83,7 +83,7 @@ const SignupForm = ({
               control={form.control}
               render={({ field, fieldState }) => (
                 <Field>
-                  <FieldLabel className="text-xs">{t('', 'Email')}</FieldLabel>
+                  <FieldLabel className="text-xs">{t('signup.email')}</FieldLabel>
                   <div className="relative">
                     <span className="absolute top-0 left-0 h-full flex items-center">
                       <Mail className="w-8 p-1" />
@@ -91,7 +91,7 @@ const SignupForm = ({
                     <Input
                       {...field}
                       type="email"
-                      placeholder={t('', 'enter your email')}
+                      placeholder={t('signup.email_placeholder')}
                       className="pl-8 placeholder:text-slate-500"
                       data-testid={TEST_IDS.emailInput}
                       aria-describedby={fieldState.error ? ERROR_IDS.email : undefined}
@@ -115,14 +115,14 @@ const SignupForm = ({
               control={form.control}
               render={({ field, fieldState }) => (
                 <Field>
-                  <FieldLabel className="text-xs">{t('', 'Password')}</FieldLabel>
+                  <FieldLabel className="text-xs">{t('signup.password')}</FieldLabel>
                   <div className="relative">
                     <span className="absolute top-0 left-0 h-full flex items-center">
                       <Lock className="w-8 p-1" />
                     </span>
                     <Input
                       {...field}
-                      placeholder={t('', 'enter your password')}
+                      placeholder={t('signup.password_placeholder')}
                       className="pl-8 placeholder:text-slate-500"
                       data-testid={TEST_IDS.passwordInput}
                       type={show ? 'text' : 'password'}
@@ -132,7 +132,7 @@ const SignupForm = ({
                     <Button
                       type="button"
                       variant={'ghost'}
-                      aria-label={t('', 'toggle password visibility')}
+                      aria-label={t('signup.toggle_password')}
                       onClick={() => setShow(!show)}
                       data-testid={TEST_IDS.passwordToggle}
                       className="absolute top-0 right-0 hover:bg-white"
@@ -156,14 +156,14 @@ const SignupForm = ({
               control={form.control}
               render={({ field, fieldState }) => (
                 <Field>
-                  <FieldLabel className="text-xs">{t('', 'Confirm Password')}</FieldLabel>
+                  <FieldLabel className="text-xs">{t('signup.confirm_password')}</FieldLabel>
                   <div className="relative">
                     <span className="absolute top-0 left-0 h-full flex items-center">
                       <Lock className="w-8 p-1" />
                     </span>
                     <Input
                       {...field}
-                      placeholder={t('', 're-enter your password')}
+                      placeholder={t('signup.confirm_password_placeholder')}
                       className="pl-8 placeholder:text-slate-500"
                       data-testid={TEST_IDS.confirmPasswordInput}
                       type={show ? 'text' : 'password'}
@@ -172,7 +172,7 @@ const SignupForm = ({
                     />
                     <Button
                       variant={'ghost'}
-                      aria-label={t('', 'toggle password visibility')}
+                      aria-label={t('signup.toggle_password')}
                       data-testid={TEST_IDS.confirmPasswordToggle}
                       type="button"
                       onClick={() => setShow(!show)}
@@ -199,7 +199,7 @@ const SignupForm = ({
               disabled={disableSubmit}
               className="w-full p-6"
             >
-              {t('', 'Signup')}
+              {disableSubmit ? <Loader2 className="animate-spin" /> : t('signup.submit')}
             </Button>
           </div>
         </form>

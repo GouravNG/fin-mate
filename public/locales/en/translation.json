@@ -23,5 +23,20 @@
     "apple": "Apple",
     "no_account": "Don't have an account?",
     "create_account": "Create an account"
+  },
+  "signup": {
+    "tagline": "Join us and manage your wealth",
+    "username": "Username",
+    "username_placeholder": "enter your unique username",
+    "email": "Email",
+    "email_placeholder": "enter your email",
+    "password": "Password",
+    "password_placeholder": "enter your password",
+    "confirm_password": "Confirm Password",
+    "confirm_password_placeholder": "re-enter your password",
+    "submit": "Signup",
+    "already_have_account": "Already have account?",
+    "login": "Login",
+    "toggle_password": "Toggle password visibility"
   }
 }
