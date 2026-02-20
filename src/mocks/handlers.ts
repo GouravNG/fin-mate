@@ -1,4 +1,4 @@
-import { http, HttpResponse } from 'msw'
+import { delay, http, HttpResponse } from 'msw'
 import { mocks } from './mocks'
 
 export const handlers = [
@@ -18,6 +18,12 @@ export const handlers = [
   ),
 
   http.post(mocks.auth.login.getUrl(), () => {
+    delay('real')
+    return HttpResponse.json(mocks.auth.login.getMockData())
+  }),
+
+  http.post(mocks.auth.signup.getUrl(), () => {
+    delay('real')
     return HttpResponse.json(mocks.auth.login.getMockData())
   }),
 ]

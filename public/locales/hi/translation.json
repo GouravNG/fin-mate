@@ -20,5 +20,20 @@
     "apple": "ऐप्पल",
     "no_account": "खाता नहीं है?",
     "create_account": "खाता बनाएं"
+  },
+  "signup": {
+    "tagline": "हमसे जुड़ें और अपनी संपत्ति का प्रबंधन करें",
+    "username": "उपयोगकर्ता नाम",
+    "username_placeholder": "अपना अनूठा उपयोगकर्ता नाम दर्ज करें",
+    "email": "ईमेल",
+    "email_placeholder": "अपना ईमेल दर्ज करें",
+    "password": "पासवर्ड",
+    "password_placeholder": "अपना पासवर्ड दर्ज करें",
+    "confirm_password": "पासवर्ड की पुष्टि करें",
+    "confirm_password_placeholder": "अपना पासवर्ड फिर से दर्ज करें",
+    "submit": "साइनअप करें",
+    "already_have_account": "क्या आपके पास पहले से खाता है?",
+    "login": "लॉगिन",
+    "toggle_password": "पासवर्ड की दृश्यता को टॉगल करें"
   }
 }

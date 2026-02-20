@@ -1,15 +1,17 @@
 import { faker } from '@faker-js/faker'
 import { getRandomCategoryIdByType } from './helpers/randomCategory'
-
 export const mocks = {
-  auth:{
-    login:{
+  auth: {
+    login: {
       getUrl: () => 'https://api.example.com/auth/login',
       getMockData: () => ({
-        username:faker.person.firstName(),
-        token:faker.string.alphanumeric({ length: 16 }),
-      })
-    }
+        username: faker.person.firstName(),
+        token: faker.string.alphanumeric({ length: 16 }),
+      }),
+    },
+    signup: {
+      getUrl: () => 'https://api.example.com/auth/signup',
+    },
   },
   user: {
     getUrl: () => 'https://api.example.com/summary',

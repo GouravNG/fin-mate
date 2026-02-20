@@ -20,5 +20,20 @@
     "apple": "ಆಪಲ್",
     "no_account": "ಖಾತೆ ಇಲ್ಲವೇ?",
     "create_account": "ಖಾತೆ ರಚಿಸಿ"
+  },
+  "signup": {
+    "tagline": "ನಮ್ಮೊಂದಿಗೆ ಸೇರಿ ಮತ್ತು ನಿಮ್ಮ ಸಂಪತ್ತನ್ನು ನಿರ್ವಹಿಸಿ",
+    "username": "ಬಳಕೆದಾರಹೆಸರು",
+    "username_placeholder": "ನಿಮ್ಮ ವಿಶಿಷ್ಟ ಬಳಕೆದಾರಹೆಸರನ್ನು ನಮೂದಿಸಿ",
+    "email": "ಇಮೇಲ್",
+    "email_placeholder": "ನಿಮ್ಮ ಇಮೇಲ್ ನಮೂದಿಸಿ",
+    "password": "ಪಾಸ್‌ವರ್ಡ್",
+    "password_placeholder": "ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್ ನಮೂದಿಸಿ",
+    "confirm_password": "ಪಾಸ್‌ವರ್ಡ್ ಖಚಿತಪಡಿಸಿ",
+    "confirm_password_placeholder": "ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್ ಅನ್ನು ಮತ್ತೆ ನಮೂದಿಸಿ",
+    "submit": "ಸೈನ್ಅಪ್",
+    "already_have_account": "ಈಗಾಗಲೇ ಖಾತೆ ಹೊಂದಿದ್ದೀರಾ?",
+    "login": "ಲಾಗಿನ್",
+    "toggle_password": "ಪಾಸ್‌ವರ್ಡ್ ಗೋಚರತೆಯನ್ನು ಟಾಗಲ್ ಮಾಡಿ"
   }
 }
