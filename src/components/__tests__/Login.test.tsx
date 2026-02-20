@@ -69,7 +69,7 @@ describe('LoginForm', () => {
     test('should render the submit button as disabled when disableSubmit is true', () => {
       renderLoginForm(true)
 
-      expect(screen.getByRole('button', { name: /login/i })).toBeDisabled()
+      expect(screen.getByTestId('login-submit-button')).toBeDisabled()
     })
 
     test('should render the submit button as enabled when disableSubmit is false', () => {

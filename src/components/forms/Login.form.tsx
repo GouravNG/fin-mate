@@ -93,7 +93,12 @@ const LoginForm = ({
               )}
             />
           </FieldGroup>
-          <Button type="submit" disabled={disableSubmit} className="w-full p-6">
+          <Button
+            type="submit"
+            disabled={disableSubmit}
+            className="w-full p-6"
+            data-testid="login-submit-button"
+          >
             {disableSubmit ? <Loader2 className="animate-spin" /> : t('login.login_button')}
           </Button>
         </form>
