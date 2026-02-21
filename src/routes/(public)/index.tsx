@@ -33,9 +33,13 @@ function RouteComponent() {
       {/* Navigation Bar */}
       <nav className="border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-          <div className="text-2xl font-pop-bold text-primary">FinMate</div>
+          <div className="text-2xl text-primary font-heading font-bold">FinMate.</div>
           <div className="flex gap-4">
-            <Button variant="outline" className='hover:text-foreground' onClick={() => navigate({ to: '/auth/login' })}>
+            <Button
+              variant="outline"
+              className="hover:text-foreground"
+              onClick={() => navigate({ to: '/auth/login' })}
+            >
               Login
             </Button>
             <Button
@@ -54,8 +58,9 @@ function RouteComponent() {
           {/* Left Content */}
           <div className="space-y-8">
             <div className="space-y-4">
-              <h1 className="text-4xl md:text-5xl font-pop-bold text-foreground leading-tight">
-                Manage Your Money with <span className="text-primary">Confidence</span>
+              <h1 className="text-4xl md:text-5xl text-foreground leading-tight font-heading">
+                Manage Your Money with{' '}
+                <span className="text-primary font-semibold">Confidence</span>
               </h1>
               <p className="text-lg text-muted-foreground">
                 FinMate helps you track spending, manage budgets, and understand your financial
@@ -72,7 +77,12 @@ function RouteComponent() {
                 Get Started
                 <ArrowRight className="ml-2 w-4 h-4" />
               </Button>
-              <Button size="lg" variant="outline" className='hover:text-foreground' onClick={() => navigate({ to: '/auth/login' })}>
+              <Button
+                size="lg"
+                variant="outline"
+                className="hover:text-foreground"
+                onClick={() => navigate({ to: '/auth/login' })}
+              >
                 Login
               </Button>
             </div>
@@ -91,7 +101,7 @@ function RouteComponent() {
       {/* Features Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-pop-bold text-foreground mb-4">Why Choose FinMate?</h2>
+          <h2 className="text-3xl text-foreground mb-4 font-heading">Why Choose FinMate?</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Built with simplicity and power in mind to help you take control of your finances
           </p>
@@ -102,7 +112,7 @@ function RouteComponent() {
             const Icon = feature.icon
             return (
               <Card
-                key={index}
+                key={feature.title + index}
                 className="p-8 border-border hover:shadow-lg transition-shadow duration-300"
               >
                 <div className="mb-6">
@@ -110,7 +120,7 @@ function RouteComponent() {
                     <Icon className="w-6 h-6 text-primary" />
                   </div>
                 </div>
-                <h3 className="text-xl font-pop-semibold text-foreground mb-2">{feature.title}</h3>
+                <h3 className="text-xl text-foreground mb-2 font-heading">{feature.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
               </Card>
             )
@@ -121,7 +131,7 @@ function RouteComponent() {
       {/* CTA Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="bg-linear-to-r from-primary/5 to-accent/5 border border-border rounded-2xl p-12 text-center">
-          <h2 className="text-3xl font-pop-bold text-foreground mb-4">Ready to Take Control?</h2>
+          <h2 className="text-3xl text-foreground mb-4 font-heading">Ready to Take Control?</h2>
           <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
             Join thousands of users who are already managing their finances smarter with FinMate
           </p>

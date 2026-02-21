@@ -13,8 +13,8 @@ const Login = () => {
     <AuthContainer>
       <AuthHeader>
         <Logo />
-        <p className="text-2xl font-semibold">FinMate</p>
-        <p className="text-slate-500 text-sm">{t('login.tagline')}</p>
+        <p className="text-2xl font-semibold font-heading">FinMate.</p>
+        <p className="text-muted-foreground text-sm">{t('login.tagline')}</p>
       </AuthHeader>
 
       <AuthContent>
@@ -22,10 +22,10 @@ const Login = () => {
       </AuthContent>
 
       <AuthFooter>
-        <p className="text-center text-xs text-slate-500">
+        <p className="text-center text-xs text-muted-foreground">
           {t('login.no_account')}
-          <Button variant={'link'} className="text-xs font-semibold">
-            <Link to='/auth/signup'>{t('login.create_account')}</Link>
+          <Button variant={'link'} className="text-xs font-semibold" asChild>
+            <Link to="/auth/signup">{t('login.create_account')}</Link>
           </Button>
         </p>
       </AuthFooter>

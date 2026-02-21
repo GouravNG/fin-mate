@@ -47,7 +47,7 @@ const LoginForm = ({
                       {...field}
                       type="email"
                       placeholder={t('login.email_placeholder')}
-                      className="pl-8 placeholder:text-slate-500"
+                      className="pl-8 placeholder:text-muted-foreground"
                       autoFocus
                     />
                   </div>
@@ -70,7 +70,7 @@ const LoginForm = ({
                     <Input
                       {...field}
                       placeholder={t('login.password_placeholder')}
-                      className="pl-8 placeholder:text-slate-500"
+                      className="pl-8 placeholder:text-muted-foreground"
                       type={show ? 'text' : 'password'}
                     />
                     <Button
@@ -85,7 +85,7 @@ const LoginForm = ({
                   </div>
                   {fieldState.error && <FieldError errors={[fieldState.error]} />}
                   <FieldDescription className="flex">
-                    <Button variant={'link'} className="text-sm ml-auto text-blue-800" asChild>
+                    <Button variant={'link'} className="text-sm ml-auto" asChild>
                       <Link to="/auth/signup">{t('login.forgot_password')}</Link>
                     </Button>
                   </FieldDescription>

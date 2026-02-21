@@ -60,7 +60,7 @@ const SignupForm = ({
                       {...field}
                       type="text"
                       placeholder={t('signup.username_placeholder')}
-                      className="pl-8 placeholder:text-slate-500"
+                      className="pl-8 placeholder:text-muted-foreground"
                       data-testid={TEST_IDS.nameInput}
                       aria-describedby={fieldState.error ? ERROR_IDS.username : undefined}
                       aria-invalid={!!fieldState.error}
@@ -92,7 +92,7 @@ const SignupForm = ({
                       {...field}
                       type="email"
                       placeholder={t('signup.email_placeholder')}
-                      className="pl-8 placeholder:text-slate-500"
+                      className="pl-8 placeholder:text-muted-foreground"
                       data-testid={TEST_IDS.emailInput}
                       aria-describedby={fieldState.error ? ERROR_IDS.email : undefined}
                       aria-invalid={!!fieldState.error}
@@ -123,7 +123,7 @@ const SignupForm = ({
                     <Input
                       {...field}
                       placeholder={t('signup.password_placeholder')}
-                      className="pl-8 placeholder:text-slate-500"
+                      className="pl-8 placeholder:text-muted-foreground"
                       data-testid={TEST_IDS.passwordInput}
                       type={show ? 'text' : 'password'}
                       aria-describedby={fieldState.error ? ERROR_IDS.password : undefined}
@@ -164,7 +164,7 @@ const SignupForm = ({
                     <Input
                       {...field}
                       placeholder={t('signup.confirm_password_placeholder')}
-                      className="pl-8 placeholder:text-slate-500"
+                      className="pl-8 placeholder:text-muted-foreground"
                       data-testid={TEST_IDS.confirmPasswordInput}
                       type={show ? 'text' : 'password'}
                       aria-describedby={fieldState.error ? ERROR_IDS.confirmPassword : undefined}
