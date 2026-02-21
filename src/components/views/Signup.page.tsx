@@ -13,8 +13,8 @@ const SignupPage = () => {
     <AuthContainer>
       <AuthHeader>
         <Logo />
-        <p className="text-2xl font-semibold">FinMate</p>
-        <p className="text-slate-500 text-sm">{t('signup.tagline')}</p>
+        <p className="text-2xl font-semibold font-heading">FinMate.</p>
+        <p className="text-muted-foreground text-sm">{t('signup.tagline')}</p>
       </AuthHeader>
 
       <AuthContent>
@@ -22,9 +22,9 @@ const SignupPage = () => {
       </AuthContent>
 
       <AuthFooter>
-        <p className="text-center text-xs text-slate-500">
+        <p className="text-center text-xs text-muted-foreground">
           {t('signup.already_have_account')}
-          <Button variant={'link'} className="text-xs font-semibold">
+          <Button variant={'link'} className="text-xs font-semibold" asChild>
             <Link to="/auth/login">{t('signup.login')}</Link>
           </Button>
         </p>

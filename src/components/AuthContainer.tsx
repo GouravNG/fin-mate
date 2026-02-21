@@ -13,7 +13,7 @@ export const AuthFooter = ({ children }: AuthType) => {
   const { t } = useTranslation()
   return (
     <>
-      <p className="uppercase text-sm text-center text-slate-500">{t('login.or_continue_with')}</p>
+      <p className="uppercase text-sm text-center text-muted-foreground">{t('login.or_continue_with')}</p>
       <SSOButtonGroup>
         <SSOButton
           name={t('login.google')}
@@ -24,7 +24,7 @@ export const AuthFooter = ({ children }: AuthType) => {
         <SSOButton
           name={t('login.apple')}
           redirectURL="/app"
-          className="flex-1 bg-black hover:bg-slate-900 text-white"
+          className="flex-1"
           variant={'secondary'}
         />
       </SSOButtonGroup>
