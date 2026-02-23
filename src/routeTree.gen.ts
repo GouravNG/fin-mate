@@ -15,9 +15,10 @@ import { Route as authRouteRouteImport } from './routes/(auth)/route'
 import { Route as publicIndexRouteImport } from './routes/(public)/index'
 import { Route as dashboardAppRouteRouteImport } from './routes/(dashboard)/app/route'
 import { Route as dashboardAppIndexRouteImport } from './routes/(dashboard)/app/index'
-import { Route as dashboardCardsAddAccountRouteImport } from './routes/(dashboard)/cards/addAccount'
 import { Route as authAuthSignupRouteImport } from './routes/(auth)/auth/signup'
 import { Route as authAuthLoginRouteImport } from './routes/(auth)/auth/login'
+import { Route as dashboardAppWalletIndexRouteImport } from './routes/(dashboard)/app/wallet/index'
+import { Route as dashboardAppSettingsIndexRouteImport } from './routes/(dashboard)/app/settings/index'
 import { Route as dashboardAppCardsIndexRouteImport } from './routes/(dashboard)/app/cards/index'
 
 const publicRouteRoute = publicRouteRouteImport.update({
@@ -47,12 +48,6 @@ const dashboardAppIndexRoute = dashboardAppIndexRouteImport.update({
   path: '/',
   getParentRoute: () => dashboardAppRouteRoute,
 } as any)
-const dashboardCardsAddAccountRoute =
-  dashboardCardsAddAccountRouteImport.update({
-    id: '/cards/addAccount',
-    path: '/cards/addAccount',
-    getParentRoute: () => dashboardRouteRoute,
-  } as any)
 const authAuthSignupRoute = authAuthSignupRouteImport.update({
   id: '/auth/signup',
   path: '/auth/signup',
@@ -63,6 +58,17 @@ const authAuthLoginRoute = authAuthLoginRouteImport.update({
   path: '/auth/login',
   getParentRoute: () => authRouteRoute,
 } as any)
+const dashboardAppWalletIndexRoute = dashboardAppWalletIndexRouteImport.update({
+  id: '/wallet/',
+  path: '/wallet/',
+  getParentRoute: () => dashboardAppRouteRoute,
+} as any)
+const dashboardAppSettingsIndexRoute =
+  dashboardAppSettingsIndexRouteImport.update({
+    id: '/settings/',
+    path: '/settings/',
+    getParentRoute: () => dashboardAppRouteRoute,
+  } as any)
 const dashboardAppCardsIndexRoute = dashboardAppCardsIndexRouteImport.update({
   id: '/cards/',
   path: '/cards/',
@@ -74,17 +80,19 @@ export interface FileRoutesByFullPath {
   '/': typeof publicIndexRoute
   '/auth/login': typeof authAuthLoginRoute
   '/auth/signup': typeof authAuthSignupRoute
-  '/cards/addAccount': typeof dashboardCardsAddAccountRoute
   '/app/': typeof dashboardAppIndexRoute
   '/app/cards/': typeof dashboardAppCardsIndexRoute
+  '/app/settings/': typeof dashboardAppSettingsIndexRoute
+  '/app/wallet/': typeof dashboardAppWalletIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof publicIndexRoute
   '/auth/login': typeof authAuthLoginRoute
   '/auth/signup': typeof authAuthSignupRoute
-  '/cards/addAccount': typeof dashboardCardsAddAccountRoute
   '/app': typeof dashboardAppIndexRoute
   '/app/cards': typeof dashboardAppCardsIndexRoute
+  '/app/settings': typeof dashboardAppSettingsIndexRoute
+  '/app/wallet': typeof dashboardAppWalletIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -95,9 +103,10 @@ export interface FileRoutesById {
   '/(public)/': typeof publicIndexRoute
   '/(auth)/auth/login': typeof authAuthLoginRoute
   '/(auth)/auth/signup': typeof authAuthSignupRoute
-  '/(dashboard)/cards/addAccount': typeof dashboardCardsAddAccountRoute
   '/(dashboard)/app/': typeof dashboardAppIndexRoute
   '/(dashboard)/app/cards/': typeof dashboardAppCardsIndexRoute
+  '/(dashboard)/app/settings/': typeof dashboardAppSettingsIndexRoute
+  '/(dashboard)/app/wallet/': typeof dashboardAppWalletIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -106,17 +115,19 @@ export interface FileRouteTypes {
     | '/'
     | '/auth/login'
     | '/auth/signup'
-    | '/cards/addAccount'
     | '/app/'
     | '/app/cards/'
+    | '/app/settings/'
+    | '/app/wallet/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/auth/login'
     | '/auth/signup'
-    | '/cards/addAccount'
     | '/app'
     | '/app/cards'
+    | '/app/settings'
+    | '/app/wallet'
   id:
     | '__root__'
     | '/(auth)'
@@ -126,9 +137,10 @@ export interface FileRouteTypes {
     | '/(public)/'
     | '/(auth)/auth/login'
     | '/(auth)/auth/signup'
-    | '/(dashboard)/cards/addAccount'
     | '/(dashboard)/app/'
     | '/(dashboard)/app/cards/'
+    | '/(dashboard)/app/settings/'
+    | '/(dashboard)/app/wallet/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -181,13 +193,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof dashboardAppIndexRouteImport
       parentRoute: typeof dashboardAppRouteRoute
     }
-    '/(dashboard)/cards/addAccount': {
-      id: '/(dashboard)/cards/addAccount'
-      path: '/cards/addAccount'
-      fullPath: '/cards/addAccount'
-      preLoaderRoute: typeof dashboardCardsAddAccountRouteImport
-      parentRoute: typeof dashboardRouteRoute
-    }
     '/(auth)/auth/signup': {
       id: '/(auth)/auth/signup'
       path: '/auth/signup'
@@ -201,6 +206,20 @@ declare module '@tanstack/react-router' {
       fullPath: '/auth/login'
       preLoaderRoute: typeof authAuthLoginRouteImport
       parentRoute: typeof authRouteRoute
+    }
+    '/(dashboard)/app/wallet/': {
+      id: '/(dashboard)/app/wallet/'
+      path: '/wallet'
+      fullPath: '/app/wallet/'
+      preLoaderRoute: typeof dashboardAppWalletIndexRouteImport
+      parentRoute: typeof dashboardAppRouteRoute
+    }
+    '/(dashboard)/app/settings/': {
+      id: '/(dashboard)/app/settings/'
+      path: '/settings'
+      fullPath: '/app/settings/'
+      preLoaderRoute: typeof dashboardAppSettingsIndexRouteImport
+      parentRoute: typeof dashboardAppRouteRoute
     }
     '/(dashboard)/app/cards/': {
       id: '/(dashboard)/app/cards/'
@@ -229,11 +248,15 @@ const authRouteRouteWithChildren = authRouteRoute._addFileChildren(
 interface dashboardAppRouteRouteChildren {
   dashboardAppIndexRoute: typeof dashboardAppIndexRoute
   dashboardAppCardsIndexRoute: typeof dashboardAppCardsIndexRoute
+  dashboardAppSettingsIndexRoute: typeof dashboardAppSettingsIndexRoute
+  dashboardAppWalletIndexRoute: typeof dashboardAppWalletIndexRoute
 }
 
 const dashboardAppRouteRouteChildren: dashboardAppRouteRouteChildren = {
   dashboardAppIndexRoute: dashboardAppIndexRoute,
   dashboardAppCardsIndexRoute: dashboardAppCardsIndexRoute,
+  dashboardAppSettingsIndexRoute: dashboardAppSettingsIndexRoute,
+  dashboardAppWalletIndexRoute: dashboardAppWalletIndexRoute,
 }
 
 const dashboardAppRouteRouteWithChildren =
@@ -241,12 +264,10 @@ const dashboardAppRouteRouteWithChildren =
 
 interface dashboardRouteRouteChildren {
   dashboardAppRouteRoute: typeof dashboardAppRouteRouteWithChildren
-  dashboardCardsAddAccountRoute: typeof dashboardCardsAddAccountRoute
 }
 
 const dashboardRouteRouteChildren: dashboardRouteRouteChildren = {
   dashboardAppRouteRoute: dashboardAppRouteRouteWithChildren,
-  dashboardCardsAddAccountRoute: dashboardCardsAddAccountRoute,
 }
 
 const dashboardRouteRouteWithChildren = dashboardRouteRoute._addFileChildren(

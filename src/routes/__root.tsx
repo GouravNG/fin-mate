@@ -5,7 +5,7 @@ import { Toaster } from '@/components/ui/sonner'
 const RootLayout = () => {
   return (
     <>
-      <div className="font-sans">
+      <div className="font-sans sm:ml-20">
         <Outlet />
       </div>
       <Toaster richColors position="top-right" />

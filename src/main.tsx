@@ -4,6 +4,7 @@ import './index.css'
 import './i18n'
 import { ThemeWatcher } from './store/theme-watcher.tsx'
 import { AuthRouterProvider, TanstackQueryProvider } from './components/context'
+import { TooltipProvider } from './components/ui/tooltip.tsx'
 
 async function enableMocking() {
   if (import.meta.env.VITE_ENABLE_MOCK === 'true') {
@@ -17,8 +18,10 @@ enableMocking().then(() => {
     <StrictMode>
       <Suspense fallback="Loading...">
         <TanstackQueryProvider>
-          <ThemeWatcher />
-          <AuthRouterProvider />
+          <TooltipProvider>
+            <ThemeWatcher />
+            <AuthRouterProvider />
+          </TooltipProvider>
         </TanstackQueryProvider>
       </Suspense>
     </StrictMode>,

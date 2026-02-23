@@ -1,26 +1,52 @@
 import { navigationData } from './data/navigation.data'
 import { Link } from '@tanstack/react-router'
+import { Tooltip, TooltipContent, TooltipTrigger } from './ui/tooltip'
+import { useGetProfileDetails } from '@/queries/hooks/summery.hooks'
+import type { ReactNode } from 'react'
+import type { TNavigation } from '@/types'
+import ProfileAvatar from './ProfileAvatar'
 
-const Navigation = () => {
+const NavigationContainer = ({ children }: { children: ReactNode }) => {
   return (
-    <nav className="fixed sm:relative bottom-0 bg-slate-50 border-t sm:border-0 w-full sm:w-auto">
-      <ul className="bg-slate-100 md:h-screen flex sm:block items-center justify-around">
-        {navigationData.map((n, k) => {
-          return (
-            <li key={n.title + k}>
-              <Link
-                to={n.href}
-                activeOptions={{ exact: false }}
-                className="flex flex-col items-center justify-center p-2 text-slate-500 [&.active]:text-blue-500"
-              >
-                <n.icon className="p-2 shrink-0 w-10 h-10" />
-                <span className="sm:hidden text-sm">{n.title}</span>
-              </Link>
-            </li>
-          )
-        })}
+    <nav className="fixed bottom-0 sm:bottom-auto sm:left-0 sm:top-0 border-t sm:border-0 w-full sm:w-15 sm:h-screen">
+      <ul className="bg-muted h-full flex sm:flex-col items-center justify-around sm:justify-between">
+        {children}
       </ul>
     </nav>
+  )
+}
+
+const NavigationItem = (prop: TNavigation) => {
+  return (
+    <li>
+      <Link
+        to={prop.href}
+        activeOptions={{ exact: true }}
+        className="flex flex-col items-center justify-center p-2 text-muted-foreground [&.active]:text-primary [&.active]:font-semibold"
+      >
+        <Tooltip>
+          <TooltipTrigger>
+            <prop.icon className="p-2 shrink-0 w-10 h-10" />
+          </TooltipTrigger>
+          <TooltipContent side="right">{prop.title}</TooltipContent>
+        </Tooltip>
+        <span className="sm:hidden text-sm">{prop.title}</span>
+      </Link>
+    </li>
+  )
+}
+
+const Navigation = () => {
+  const { data } = useGetProfileDetails()
+  return (
+    <NavigationContainer>
+      <div className="flex sm:flex-col items-center justify-around sm:justify-start flex-1">
+        {navigationData.map((n, k) => {
+          return <NavigationItem {...n} key={n.title + k} />
+        })}
+      </div>
+      {data && <ProfileAvatar avatar={data.avatar} usernameShortForm={data.usernameShortForm} />}
+    </NavigationContainer>
   )
 }
 export default Navigation
