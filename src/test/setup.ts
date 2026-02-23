@@ -18,6 +18,12 @@ vi.mock('@tanstack/react-router', async (importOriginal) => {
   }
 })
 
+globalThis.ResizeObserver = class ResizeObserver {
+  observe() {}
+  unobserve() {}
+  disconnect() {}
+}
+
 // Initialize i18n for tests (guard prevents re-initialization across test files)
 if (!i18n.isInitialized) {
   i18n.use(initReactI18next).init({

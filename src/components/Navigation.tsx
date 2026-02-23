@@ -17,22 +17,25 @@ const NavigationContainer = ({ children }: { children: ReactNode }) => {
   )
 }
 
-const NavigationItem = (prop: TNavigation) => {
+export const NavigationItem = (prop: TNavigation) => {
   const { t } = useTranslation()
   return (
-    <li>
+    <li data-testid={`nav-item-${prop.title}`}>
       <Link
         to={prop.href}
         activeOptions={{ exact: true }}
         className="flex flex-col items-center justify-center p-2 text-muted-foreground [&.active]:text-primary [&.active]:font-semibold"
+        data-testid={`nav-link-${prop.title}`}
       >
         <Tooltip>
-          <TooltipTrigger>
-            <prop.icon className="p-2 shrink-0 w-10 h-10" />
+          <TooltipTrigger data-testid={`nav-icon-trigger-${prop.title}`}>
+            <prop.icon className="p-2 shrink-0 w-10 h-10" data-testid={`nav-icon-${prop.title}`} />
           </TooltipTrigger>
-          <TooltipContent side="right">{t(prop.title)}</TooltipContent>
+          <TooltipContent side="right" data-testid={`nav-tooltip-${prop.title}`}>{t(prop.title)}</TooltipContent>
         </Tooltip>
-        <span className="sm:hidden text-sm">{t(prop.title)}</span>
+        <span className="sm:hidden text-sm" data-testid={`nav-label-${prop.title}`}>
+          {t(prop.title)}
+        </span>
       </Link>
     </li>
   )
