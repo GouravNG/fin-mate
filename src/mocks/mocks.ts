@@ -39,6 +39,13 @@ export const mocks = {
         },
       }
     },
+    profile: {
+      getUrl: () => 'https://api.example.com/user/profile',
+      getMockData: () => ({
+        username: faker.person.firstName(),
+        avatar: faker.datatype.boolean() ? faker.image.avatarGitHub() : null,
+      }),
+    },
   },
   transactions: {
     getUrl: () => 'https://api.example.com/transactions',

@@ -10,7 +10,7 @@ export const navigationData: TNavigation[] = [
   {
     title: 'Wallet',
     icon: Wallet,
-    href: '/',
+    href: '/app/wallet',
   },
   {
     title: 'Cards',
@@ -20,6 +20,6 @@ export const navigationData: TNavigation[] = [
   {
     title: 'Settings',
     icon: Settings,
-    href: '/',
+    href: '/app/settings',
   },
 ]

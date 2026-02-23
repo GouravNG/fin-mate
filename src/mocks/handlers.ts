@@ -26,4 +26,6 @@ export const handlers = [
     delay('real')
     return HttpResponse.json(mocks.auth.login.getMockData())
   }),
+
+  http.get(mocks.user.profile.getUrl(), () => HttpResponse.json(mocks.user.profile.getMockData())),
 ]
