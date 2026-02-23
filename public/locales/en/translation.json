@@ -38,5 +38,11 @@
     "already_have_account": "Already have account?",
     "login": "Login",
     "toggle_password": "Toggle password visibility"
+  },
+  "navigation": {
+    "home": "Home",
+    "wallet": "Wallet",
+    "cards": "Cards",
+    "settings": "Settings"
   }
 }

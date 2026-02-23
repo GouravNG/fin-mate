@@ -35,5 +35,11 @@
     "already_have_account": "क्या आपके पास पहले से खाता है?",
     "login": "लॉगिन",
     "toggle_password": "पासवर्ड की दृश्यता को टॉगल करें"
+  },
+  "navigation": {
+    "home": "होम",
+    "wallet": "वॉलेट",
+    "cards": "कार्ड्स",
+    "settings": "सेटिंग्स"
   }
 }

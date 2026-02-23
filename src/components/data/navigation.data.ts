@@ -3,22 +3,22 @@ import { CreditCard, Home, Settings, Wallet } from 'lucide-react'
 
 export const navigationData: TNavigation[] = [
   {
-    title: 'Home',
+    title: 'navigation.home',
     icon: Home,
     href: '/app',
   },
   {
-    title: 'Wallet',
+    title: 'navigation.wallet',
     icon: Wallet,
     href: '/app/wallet',
   },
   {
-    title: 'Cards',
+    title: 'navigation.cards',
     icon: CreditCard,
     href: '/app/cards',
   },
   {
-    title: 'Settings',
+    title: 'navigation.settings',
     icon: Settings,
     href: '/app/settings',
   },
