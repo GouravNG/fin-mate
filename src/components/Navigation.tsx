@@ -5,6 +5,7 @@ import { useGetProfileDetails } from '@/queries/hooks/summery.hooks'
 import type { ReactNode } from 'react'
 import type { TNavigation } from '@/types'
 import ProfileAvatar from './ProfileAvatar'
+import { useTranslation } from 'react-i18next'
 
 const NavigationContainer = ({ children }: { children: ReactNode }) => {
   return (
@@ -17,6 +18,7 @@ const NavigationContainer = ({ children }: { children: ReactNode }) => {
 }
 
 const NavigationItem = (prop: TNavigation) => {
+  const { t } = useTranslation()
   return (
     <li>
       <Link
@@ -28,9 +30,9 @@ const NavigationItem = (prop: TNavigation) => {
           <TooltipTrigger>
             <prop.icon className="p-2 shrink-0 w-10 h-10" />
           </TooltipTrigger>
-          <TooltipContent side="right">{prop.title}</TooltipContent>
+          <TooltipContent side="right">{t(prop.title)}</TooltipContent>
         </Tooltip>
-        <span className="sm:hidden text-sm">{prop.title}</span>
+        <span className="sm:hidden text-sm">{t(prop.title)}</span>
       </Link>
     </li>
   )

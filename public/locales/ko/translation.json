@@ -35,5 +35,11 @@
     "already_have_account": "이미 계정이 있으신가요?",
     "login": "로그인",
     "toggle_password": "비밀번호 표시 전환"
+  },
+  "navigation": {
+    "home": "홈",
+    "wallet": "지갑",
+    "cards": "카드",
+    "settings": "설정"
   }
 }
