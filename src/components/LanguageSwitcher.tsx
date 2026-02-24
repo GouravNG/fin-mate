@@ -1,30 +1,42 @@
 import { useTranslation } from 'react-i18next'
 import { Button } from './ui/button'
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuTrigger,
+} from './ui/dropdown-menu'
+import { Languages } from 'lucide-react'
+import { supportedLanguages } from '@/i18n'
 
-const languages = [
-  { code: 'en', name: 'English', flag: '🇺🇸' },
-  { code: 'hi', name: 'Hindi', flag: '🇮🇳' },
-  { code: 'kn', name: 'Kannada', flag: '🇮🇳' },
-  { code: 'ko', name: 'Korean', flag: '🇰🇷' },
-]
-
-export function LanguageSwitcher() {
-  const { i18n } = useTranslation()
-
+export const LanguageSwitcher = () => {
+  const {
+    i18n: { changeLanguage, resolvedLanguage },
+  } = useTranslation()
   return (
-    <div className="flex gap-2 p-2 overflow-x-auto">
-      {languages.map((lang) => (
-        <Button
-          key={lang.code}
-          variant={i18n.language === lang.code ? 'default' : 'outline'}
-          size="sm"
-          onClick={() => i18n.changeLanguage(lang.code)}
-          className="flex items-center gap-2"
-        >
-          <span>{lang.flag}</span>
-          <span className="hidden sm:inline">{lang.name}</span>
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button variant={'secondary'}>
+          <Languages />
+          {resolvedLanguage}
         </Button>
-      ))}
-    </div>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent align="end">
+        <DropdownMenuGroup>
+          <DropdownMenuLabel className="text-sm text-muted-foreground">
+            Select your language
+          </DropdownMenuLabel>
+          {supportedLanguages.map((i, k) => {
+            return (
+              <DropdownMenuItem key={i.code + k} onClick={() => changeLanguage(i.code)}>
+                {i.name}
+              </DropdownMenuItem>
+            )
+          })}
+        </DropdownMenuGroup>
+      </DropdownMenuContent>
+    </DropdownMenu>
   )
 }
