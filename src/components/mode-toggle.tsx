@@ -28,7 +28,7 @@ export const ModeToggle = () => {
       variant="ghost"
       size="icon"
       onClick={toggleTheme}
-      className="rounded-full bg-slate-100 dark:bg-slate-800 border"
+      className="border rounded-full"
       title={`Current theme: ${theme}. Click to cycle.`}
     >
       {getIcon()}
