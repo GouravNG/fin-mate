@@ -5,7 +5,10 @@
     "dashboard": "Dashboard",
     "settings": "Settings",
     "change_language": "Change Language",
-    "logout": "Logout"
+    "logout": "Logout",
+    "select_language": "Select your language",
+    "toggle_theme": "Toggle theme",
+    "theme_description": "Current theme: {{theme}}. Click to cycle."
   },
   "login": {
     "tagline": "Secure Access to your wealth",
@@ -44,5 +47,14 @@
     "wallet": "Wallet",
     "cards": "Cards",
     "settings": "Settings"
+  },
+  "greetings": {
+    "morning": "Good Morning",
+    "afternoon": "Good Afternoon",
+    "evening": "Good Evening"
+  },
+  "notifications": {
+    "title": "Your Notifications",
+    "no_notifications": "You're all caught up! 🎉"
   }
 }

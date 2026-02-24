@@ -19,7 +19,7 @@ const NotifictionsList: React.FC<TNotifications> = ({ notifications }) => {
       {notifications.map((i, k) => {
         return (
           <div key={i + k} className="relative">
-            <DropdownMenuItem>{i}</DropdownMenuItem>
+            <DropdownMenuItem data-testid={`notification-item`}>{i}</DropdownMenuItem>
             <span className="absolute top-1/2 -translate-y-1/2 right-2 cursor-pointer">
               <CircleX className="text-destructive" size={20} />
             </span>
@@ -34,18 +34,20 @@ const Notifications = ({ notifications }: TNotifications) => {
   const { t } = useTranslation()
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
+      <DropdownMenuTrigger asChild data-testid="notification-trigger-btn">
         <Button variant={'ghost'} size={'icon'} className="rounded-full border">
           <Bell size={20} />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuLabel>Your Notifications</DropdownMenuLabel>
+        <DropdownMenuLabel data-testid={'notification-label'}>
+          {t('notifications.title', 'Your Notifications')}
+        </DropdownMenuLabel>
         {notifications.length ? (
           <NotifictionsList notifications={notifications} />
         ) : (
-          <DropdownMenuLabel className="text-muted-foreground">
-            {t('', "You're all caught up! 🎉")}
+          <DropdownMenuLabel className="text-muted-foreground" data-testid="notification-no-text">
+            {t('notifications.no_notifications', "You're all caught up! 🎉")}
           </DropdownMenuLabel>
         )}
       </DropdownMenuContent>

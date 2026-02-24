@@ -12,7 +12,7 @@ import pluginRouter from '@tanstack/eslint-plugin-router'
 import pluginQuery from '@tanstack/eslint-plugin-query'
 
 export default defineConfig([
-  globalIgnores(['dist']),
+  globalIgnores(['dist', "storybook-static/**", "coverage/**"]),
   {
     files: ['**/*.{ts,tsx}'],
     ignores: ['src/components/ui/**'],

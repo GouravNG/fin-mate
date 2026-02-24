@@ -13,12 +13,13 @@ import { supportedLanguages } from '@/i18n'
 
 export const LanguageSwitcher = () => {
   const {
+    t,
     i18n: { changeLanguage, resolvedLanguage },
   } = useTranslation()
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant={'secondary'}>
+        <Button variant={'secondary'} data-testid="language-switcher-btn">
           <Languages />
           {resolvedLanguage}
         </Button>
@@ -26,11 +27,15 @@ export const LanguageSwitcher = () => {
       <DropdownMenuContent align="end">
         <DropdownMenuGroup>
           <DropdownMenuLabel className="text-sm text-muted-foreground">
-            Select your language
+            {t('common.select_language', 'Select your language')}
           </DropdownMenuLabel>
           {supportedLanguages.map((i, k) => {
             return (
-              <DropdownMenuItem key={i.code + k} onClick={() => changeLanguage(i.code)}>
+              <DropdownMenuItem
+                data-testid={`languages`}
+                key={i.code + k}
+                onClick={() => changeLanguage(i.code)}
+              >
                 {i.name}
               </DropdownMenuItem>
             )
