@@ -1,8 +1,10 @@
 import { Moon, Sun, Monitor } from 'lucide-react'
 import { usePreferenceStore, type TTheme } from '@/store/use-preference-store'
 import { Button } from './ui/button'
+import { useTranslation } from 'react-i18next'
 
 export const ModeToggle = () => {
+  const { t } = useTranslation()
   const { theme, setTheme } = usePreferenceStore()
 
   const toggleTheme = () => {
@@ -29,10 +31,14 @@ export const ModeToggle = () => {
       size="icon"
       onClick={toggleTheme}
       className="border rounded-full"
-      title={`Current theme: ${theme}. Click to cycle.`}
+      title={t('common.theme_description', {
+        defaultValue: `Current theme: ${theme}. Click to cycle.`,
+        theme,
+      })}
+      data-testid="mode-toggle"
     >
       {getIcon()}
-      <span className="sr-only">Toggle theme</span>
+      <span className="sr-only">{t('common.toggle_theme', 'Toggle theme')}</span>
     </Button>
   )
 }

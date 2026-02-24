@@ -5,7 +5,10 @@
     "dashboard": "ಡ್ಯಾಶ್‌ಬೋರ್ಡ್",
     "settings": "ಸೆಟ್ಟಿಂಗ್‌ಗಳು",
     "change_language": "ಭಾಷೆಯನ್ನು ಬದಲಿಸಿ",
-    "logout": "ಲಾಗ್ ಔಟ್"
+    "logout": "ಲಾಗ್ ಔಟ್",
+    "select_language": "ನಿಮ್ಮ ಭಾಷೆಯನ್ನು ಆಯ್ಕೆಮಾಡಿ",
+    "toggle_theme": "ಥೀಮ್ ಬದಲಿಸಿ",
+    "theme_description": "ಪ್ರಸ್ತುತ ಥೀಮ್: {{theme}}. ಬದಲಾಯಿಸಲು ಕ್ಲಿಕ್ ಮಾಡಿ."
   },
   "login": {
     "tagline": "ನಿಮ್ಮ ಸಂಪತ್ತಿಗೆ ಸುರಕ್ಷಿತ ಪ್ರವೇಶ",
@@ -41,5 +44,14 @@
     "wallet": "ವಾಲೆಟ್",
     "cards": "ಕಾರ್ಡ್‌ಗಳು",
     "settings": "ಸೆಟ್ಟಿಂಗ್‌ಗಳು"
+  },
+  "greetings": {
+    "morning": "ಶುಭೋದಯ",
+    "afternoon": "ಶುಭ ಮಧ್ಯಾಹ್ನ",
+    "evening": "ಶುಭ ಸಂಜೆ"
+  },
+  "notifications": {
+    "title": "ನಿಮ್ಮ ಅಧಿಸೂಚನೆಗಳು",
+    "no_notifications": "ನೀವು ಎಲ್ಲ ಅಧಿಸೂಚನೆಗಳನ್ನು ನೋಡಿದ್ದೀರಿ! 🎉"
   }
 }
