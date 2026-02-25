@@ -34,7 +34,11 @@ const Notifications = ({ notifications }: TNotifications) => {
   const { t } = useTranslation()
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild data-testid="notification-trigger-btn">
+      <DropdownMenuTrigger
+        asChild
+        data-testid="notification-trigger-btn"
+        aria-label="Show Notifications"
+      >
         <Button variant={'ghost'} size={'icon'} className="rounded-full border">
           <Bell size={20} />
         </Button>

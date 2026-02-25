@@ -42,7 +42,7 @@ export const BankAccounts = () => {
         <BankAccount />
         <BankAccount />
         <div className="p-4 w-full flex-wrap border rounded-xl sm:max-w-74 sm:flex items-center justify-center bg-slate-50 hidden">
-          <Button variant={'ghost'} onClick={() => navigate({ to: '/cards/addAccount' })}>
+          <Button variant={'ghost'} onClick={() => navigate({ to: '/app/cards' })}>
             <span>
               <PlusCircle />
             </span>
@@ -64,7 +64,7 @@ export const BankAccounts = () => {
       <div className="w-full p-2 mb-20 sm:hidden">
         <Button
           className="w-full font-semibold bg-blue-500"
-          onClick={() => navigate({ to: '/cards/addAccount' })}
+          onClick={() => navigate({ to: '/app/cards' })}
         >
           <PlusCircle />
           Add New Account

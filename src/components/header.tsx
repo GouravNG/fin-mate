@@ -4,13 +4,9 @@ import Notifications from './Notifications'
 import { useTranslation } from 'react-i18next'
 import { LanguageSwitcher } from './LanguageSwitcher'
 import { getGreetings } from '@/utils/getGreetings'
+import type { THeader } from '@/types'
 
-type THeader = {
-  username: string
-  avatar: string | undefined
-  userNameShortForm: string
-  notifications: string[]
-}
+
 
 const Header: React.FC<THeader> = ({ username, avatar, userNameShortForm, notifications }) => {
   const { t } = useTranslation()
