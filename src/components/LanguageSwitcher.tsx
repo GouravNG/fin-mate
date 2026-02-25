@@ -18,7 +18,7 @@ export const LanguageSwitcher = () => {
   } = useTranslation()
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
+      <DropdownMenuTrigger asChild aria-label="Switch Language">
         <Button variant={'secondary'} data-testid="language-switcher-btn">
           <Languages />
           {resolvedLanguage}

@@ -18,3 +18,10 @@ export type THeroCard = {
 }
 
 export type TCard = CardsResponse[0]
+
+export type THeader = {
+  username: string
+  avatar: string | undefined
+  userNameShortForm: string
+  notifications: string[]
+}

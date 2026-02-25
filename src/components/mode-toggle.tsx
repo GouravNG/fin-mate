@@ -36,6 +36,7 @@ export const ModeToggle = () => {
         theme,
       })}
       data-testid="mode-toggle"
+      aria-label="Switch theme"
     >
       {getIcon()}
       <span className="sr-only">{t('common.toggle_theme', 'Toggle theme')}</span>
