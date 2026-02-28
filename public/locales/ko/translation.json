@@ -18,6 +18,9 @@
     "password_placeholder": "비밀번호 입력",
     "forgot_password": "비밀번호를 잊으셨나요?",
     "login_button": "로그인",
+    "show_password": "비밀번호 표시",
+    "hide_password": "비밀번호 숨기기",
+    "toggle_password": "비밀번호 표시 전환",
     "or_continue_with": "또는 다음으로 계속",
     "google": "구글",
     "apple": "애플",
@@ -40,10 +43,22 @@
     "toggle_password": "비밀번호 표시 전환"
   },
   "navigation": {
-    "home": "홈",
-    "wallet": "지갑",
-    "cards": "카드",
-    "settings": "설정"
+    "home": {
+      "title": "홈",
+      "description": "재무 건강 상태 개요"
+    },
+    "wallet": {
+      "title": "지갑",
+      "description": "지갑 및 거래 관리"
+    },
+    "cards": {
+      "title": "계좌 및 카드",
+      "description": "계좌 및 카드 관리"
+    },
+    "settings": {
+      "title": "설정",
+      "description": "기본 설정 및 계정 설정 맞춤화"
+    }
   },
   "greetings": {
     "morning": "좋은 아침입니다",
