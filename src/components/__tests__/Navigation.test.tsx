@@ -13,7 +13,8 @@ const renderWithTooltipProvider = (component: ReactNode) => {
 
 describe('NavigationItem', () => {
   const createNavItem = (overrides?: Partial<TNavigation>): TNavigation => ({
-    title: 'navigation.home',
+    title: 'navigation.home.title',
+    description: 'navigation.home.description',
     icon: Home,
     href: '/app',
     ...overrides,
@@ -29,7 +30,7 @@ describe('NavigationItem', () => {
 
   it('contains a link with the correct href', () => {
     // Expected Result: The rendered link should have the href attribute matching the prop
-    const navItem = createNavItem({ href: '/app/settings', title: 'navigation.settings' })
+    const navItem = createNavItem({ href: '/app/settings', title: 'navigation.settings.title' })
     renderWithTooltipProvider(<NavigationItem {...navItem} />)
 
     const link = screen.getByTestId(`nav-link-${navItem.title}`)
@@ -38,7 +39,7 @@ describe('NavigationItem', () => {
 
   it('displays the translated label for small screens', () => {
     // Expected Result: The label span should contain the correctly translated text (e.g., "Home" for "navigation.home")
-    const navItem = createNavItem({ title: 'navigation.home' })
+    const navItem = createNavItem({ title: 'navigation.home.title' })
     renderWithTooltipProvider(<NavigationItem {...navItem} />)
 
     const label = screen.getByTestId(`nav-label-${navItem.title}`)

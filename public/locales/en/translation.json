@@ -43,10 +43,22 @@
     "toggle_password": "Toggle password visibility"
   },
   "navigation": {
-    "home": "Home",
-    "wallet": "Wallet",
-    "cards": "Cards",
-    "settings": "Settings"
+    "home": {
+      "title": "Home",
+      "description": "Overview of your financial health"
+    },
+    "wallet": {
+      "title": "Wallet",
+      "description": "Manage your wallet and transactions"
+    },
+    "cards": {
+      "title": "Account & Cards",
+      "description": "Manage your accounts and cards"
+    },
+    "settings": {
+      "title": "Settings",
+      "description": "Customize your preferences and account settings"
+    }
   },
   "greetings": {
     "morning": "Good Morning",

@@ -4,6 +4,7 @@ import type { FileRoutesByTo } from '@/routeTree.gen'
 
 export type TNavigation = {
   title: string
+  description: string
   icon: LucideIcon
   href: keyof FileRoutesByTo
 }
@@ -24,4 +25,13 @@ export type THeader = {
   avatar: string | undefined
   userNameShortForm: string
   notifications: string[]
+}
+
+export type TDynamicHeader = {
+  title: string
+  description?: string
+  backFn: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
+  utilityIcon?: LucideIcon
+  utilityFn?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
+  children?: React.ReactNode
 }

@@ -18,6 +18,9 @@
     "password_placeholder": "पासवर्ड दर्ज करें",
     "forgot_password": "पासवर्ड भूल गए?",
     "login_button": "लॉगिन करें",
+    "show_password": "पासवर्ड दिखाएं",
+    "hide_password": "पासवर्ड छिपाएं",
+    "toggle_password": "पासवर्ड दृश्यता को टॉगल करें",
     "or_continue_with": "या जारी रखें",
     "google": "गूगल",
     "apple": "ऐप्पल",
@@ -40,10 +43,22 @@
     "toggle_password": "पासवर्ड की दृश्यता को टॉगल करें"
   },
   "navigation": {
-    "home": "होम",
-    "wallet": "वॉलेट",
-    "cards": "कार्ड्स",
-    "settings": "सेटिंग्स"
+    "home": {
+      "title": "होम",
+      "description": "अपने वित्तीय स्वास्थ्य का अवलोकन"
+    },
+    "wallet": {
+      "title": "वॉलेट",
+      "description": "अपने वॉलेट और लेनदेन का प्रबंधन करें"
+    },
+    "cards": {
+      "title": "खाता और कार्ड",
+      "description": "अपने खातों और कार्डों का प्रबंधन करें"
+    },
+    "settings": {
+      "title": "सेटिंग्स",
+      "description": "अपनी प्राथमिकताएं और खाता सेटिंग्स को अनुकूलित करें"
+    }
   },
   "greetings": {
     "morning": "शुभ प्रभात",
