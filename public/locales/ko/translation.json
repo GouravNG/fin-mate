@@ -68,5 +68,18 @@
   "notifications": {
     "title": "알림",
     "no_notifications": "모두 읽었습니다! 🎉"
+  },
+  "userCard": {
+    "empty": {
+      "title": "아직 카드가 없습니다",
+      "description": "시작하려면 첫 번째 카드를 추가하세요."
+    },
+    "error": {
+      "title": "문제가 발생했습니다",
+      "description": "카드를 로드할 수 없습니다. 다시 시도해주세요."
+    },
+    "action": {
+      "addNew": "새 카드 추가"
+    }
   }
 }

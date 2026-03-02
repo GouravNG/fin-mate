@@ -68,5 +68,18 @@
   "notifications": {
     "title": "Your Notifications",
     "no_notifications": "You're all caught up! 🎉"
+  },
+  "userCard": {
+    "empty": {
+      "title": "No cards yet",
+      "description": "Add your first card to get started."
+    },
+    "error": {
+      "title": "Something went wrong",
+      "description": "We couldn't load your cards. Please try again."
+    },
+    "action": {
+      "addNew": "Add new card"
+    }
   }
 }

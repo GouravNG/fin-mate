@@ -67,7 +67,7 @@ export const mocks = {
     cards: {
       getUrl: () => 'https://api.example.com/accounts/cards',
       getMockData: () => {
-        return Array.from({ length: 3 }, () => ({
+        return Array.from({ length: Math.floor(Math.random() * 4) }, () => ({
           id: faker.number.int({ min: 1, max: 20 }),
           cardTitle: faker.finance.accountName(),
           transaction: faker.number.float({ min: 1000, max: 10000 }).toFixed(2),

@@ -13,17 +13,19 @@ export const handlers = [
   }),
 
   // Mock for accounts/cards endpoint
-  http.get(mocks.accounts.cards.getUrl(), () =>
-    HttpResponse.json(mocks.accounts.cards.getMockData()),
+  http.get(mocks.accounts.cards.getUrl(),async () =>{
+    await delay('real')
+    return HttpResponse.json(mocks.accounts.cards.getMockData())
+  }
   ),
 
-  http.post(mocks.auth.login.getUrl(), () => {
-    delay('real')
+  http.post(mocks.auth.login.getUrl(), async () => {
+    await delay('real')
     return HttpResponse.json(mocks.auth.login.getMockData())
   }),
 
-  http.post(mocks.auth.signup.getUrl(), () => {
-    delay('real')
+  http.post(mocks.auth.signup.getUrl(), async () => {
+    await delay('real')
     return HttpResponse.json(mocks.auth.login.getMockData())
   }),
 

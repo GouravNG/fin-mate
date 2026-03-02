@@ -35,3 +35,5 @@ export type TDynamicHeader = {
   utilityFn?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
   children?: React.ReactNode
 }
+
+export type TUserCards = { data: TCard[] | undefined; isLoading: boolean; isError?: boolean }
