@@ -5,3 +5,4 @@ export type TransactionsResponse = ReturnType<typeof mocks.transactions.getTrans
 export type CardsResponse = ReturnType<typeof mocks.accounts.cards.getMockData>
 export type AuthResponse = ReturnType<typeof mocks.auth.login.getMockData>
 export type ProfileResponse = ReturnType<typeof mocks.user.profile.getMockData>
+export type BankAccountResponse = ReturnType<typeof mocks.banks.getMockData>

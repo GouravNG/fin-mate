@@ -88,4 +88,14 @@ export const mocks = {
       },
     },
   },
+  banks: {
+    getUrl: () => 'https://api.example.com/accounts/banks',
+    getMockData: () => {
+      return Array.from({ length: Math.floor(Math.random() * 4) }, () => ({
+        bankName: faker.finance.accountName(),
+        last4Digits: faker.finance.accountNumber().substring(0, 4),
+        balance: faker.number.float({ min: 1000, max: 10000 }).toFixed(2),
+      }))
+    },
+  },
 }

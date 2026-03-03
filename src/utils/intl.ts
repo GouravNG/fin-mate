@@ -4,9 +4,9 @@ export const getNumberAsCurrency = (
   currency: string = 'USD',
 ): string => {
   if (typeof money !== 'number') {
-    money = parseInt(money)
-    if (isNaN(money)) {
-      throw new Error(
+    money = Number.parseInt(money)
+    if (Number.isNaN(money)) {
+      throw new TypeError(
         'Invalid input: money must be a number or a string that can be parsed into a number.',
       )
     }

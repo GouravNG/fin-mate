@@ -1,73 +1,80 @@
-import { Dot, Landmark, Lock, PlusCircle } from 'lucide-react'
+import { Lock, PlusCircle } from 'lucide-react'
 import { Button } from './ui/button'
-import { useNavigate } from '@tanstack/react-router'
+import { useTranslation } from 'react-i18next'
+import { getNumberAsCurrency } from '@/utils/intl'
+import type { TBankAccount, TBankAccounts } from '@/types'
+import { getBankIconPreference } from '@/utils/getPreferences'
+import { Separator } from '@/components/ui/separator'
 
-const BankAccount = () => {
+const BankAccount: React.FC<TBankAccount> = ({
+  bankName,
+  balance,
+  icon,
+  last4Digits,
+  // nickName,
+}) => {
+  const { t } = useTranslation()
   return (
-    <>
-      <div className="flex items-center justify-between p-4 w-full flex-wrap border rounded-xl sm:max-w-74">
-        <div className="p-2 bg-orange-200 border rounded-lg">
-          <Landmark className="text-orange-500" />
-        </div>
-        <div className="px-4">
-          <div className="font-semibold">Axis Bank</div>
-          <div className="flex items-center justify-center">
-            <div className="flex">
-              {Array.from({ length: 4 }).map(() => (
-                <Dot size={10} strokeWidth={10} fill="#000" />
-              ))}
-            </div>
-            <div className="text-xs">1234</div>
-          </div>
-        </div>
-        <div className="ml-auto flex flex-col">
-          <div className="font-semibold text-black">$12,34,000.00</div>
-          <div className="ml-auto text-sm text-green-600 font-semibold">Verified</div>
+    <div className="flex items-center justify-between p-4 w-full">
+      <div className={`p-2 ${icon.background} border rounded-md`}>
+        <icon.icon className={`${icon.foreground} `} />
+      </div>
+
+      <div className="pl-4">
+        <div className="font-semibold">{bankName}</div>
+        <div className="flex items-center justify-start text-sm">
+          <div className="flex">{Array.from({ length: 3 }).map(() => '*')}</div>
+          <div>{last4Digits}</div>
         </div>
       </div>
-    </>
+
+      <div className="ml-auto flex flex-col items-end justify-center">
+        <div className="font-semibold">{getNumberAsCurrency(balance)}</div>
+        <div className="text-xs text-muted-foreground font-semibold">
+          {t('', 'available balance')}
+        </div>
+      </div>
+    </div>
   )
 }
 
-export const BankAccounts = () => {
-  const navigate = useNavigate()
+export const BankAccounts: React.FC<TBankAccounts> = ({ data }) => {
+  const { t } = useTranslation()
+  const iconPref = getBankIconPreference()
   return (
     <>
-      <p className="text-xl font-semibold">
-        <p>Linked Bank Accounts</p>
-      </p>
-      <div className="flex flex-col sm:flex-row sm:flex-wrap gap-4 sm:gap-10 py-4 items-center justify-start">
-        <BankAccount />
-        <BankAccount />
-        <BankAccount />
-        <BankAccount />
-        <div className="p-4 w-full flex-wrap border rounded-xl sm:max-w-74 sm:flex items-center justify-center bg-slate-50 hidden">
-          <Button variant={'ghost'} onClick={() => navigate({ to: '/app/cards' })}>
-            <span>
-              <PlusCircle />
-            </span>
-            Add new Account
-          </Button>
-        </div>
+      <div className="text-xl font-semibold flex items-center justify-between my-2">
+        <p className="font-heading">{t('', 'Bank Accounts')}</p>
+        <Button variant={'link'} className="cursor-pointer font-semibold">
+          {t('', 'Manage connections')}
+        </Button>
       </div>
-      <div className="w-full p-6 bg-gray-50 border border-gray-200 rounded-lg mt-6">
-        <div className="flex items-center justify-center flex-col gap-2">
-          <div className="text-2xl">
-            <Lock />
-          </div>
-          <div className="font-semibold text-gray-700">ENCRYPTED & SECURE</div>
-          <div className="text-xs text-gray-600 text-center">
-            We use 256-bit encryption to keep your data safe and never store your login credentials.
+
+      <div className="flex flex-col gap-2 border rounded-md">
+        {data.map((bnk, key) => {
+          return (
+            <div key={bnk.last4Digits + key}>
+              <BankAccount {...bnk} icon={iconPref} />
+              {data.length - 1 !== key && <Separator />}
+            </div>
+          )
+        })}
+      </div>
+      {/* MOBILE ONLY UI */}
+      <div className="flex sm:hidden flex-col gap-4 mt-4">
+        <div className="flex items-center justify-center flex-col gap-2 border bg-accent rounded-lg p-4 text-muted-foreground">
+          <Lock className="text-2xl" />
+          <div className="font-semibold text-foreground">{t('', 'ENCRYPTED & SECURE')}</div>
+          <div className="text-xs text-center">
+            {t(
+              '',
+              'We use 256-bit encryption to keep your data safe and never store your login credentials.',
+            )}
           </div>
         </div>
-      </div>
-      <div className="w-full p-2 mb-20 sm:hidden">
-        <Button
-          className="w-full font-semibold bg-blue-500"
-          onClick={() => navigate({ to: '/app/cards' })}
-        >
+        <Button className="w-full font-semibold">
           <PlusCircle />
-          Add New Account
+          {t('', 'Add New Account')}
         </Button>
       </div>
     </>
