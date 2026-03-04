@@ -52,5 +52,7 @@ export type TBankAccount = {
 }
 
 export type TBankAccounts = {
-  data: Omit<TBankAccount, 'icon'>[]
+  data: Omit<TBankAccount, 'icon'>[] | undefined
+  isLoading: boolean
+  isError?: boolean
 }

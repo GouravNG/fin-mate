@@ -32,8 +32,19 @@ const defaultArgs: TBankAccounts = {
       last4Digits: '9202',
     },
   ],
+  isLoading: false,
+  isError: false,
 }
 
 export const Default: Story = {
   args: defaultArgs,
+}
+export const LoadingUI: Story = {
+  args: { ...defaultArgs, isLoading: true },
+}
+export const ErrorUI: Story = {
+  args: { ...defaultArgs, isError: true },
+}
+export const NoBankLinked: Story = {
+  args: { ...defaultArgs, data: [] },
 }
