@@ -68,5 +68,30 @@
   "notifications": {
     "title": "알림",
     "no_notifications": "모두 읽었습니다! 🎉"
+  },
+  "userCard": {
+    "empty": {
+      "title": "아직 카드가 없습니다",
+      "description": "시작하려면 첫 번째 카드를 추가하세요."
+    },
+    "error": {
+      "title": "문제가 발생했습니다",
+      "description": "카드를 로드할 수 없습니다. 다시 시도해주세요."
+    },
+    "action": {
+      "addNew": "새 카드 추가"
+    }
+  },
+  "bankAccounts": {
+    "yourCards": "당신의 카드",
+    "bankAccounts": "은행 계좌",
+    "availableBalance": "사용 가능한 잔액",
+    "balance": "잔액",
+    "manageAccounts": "계좌 관리",
+    "encryptedSecure": "암호화 및 안전",
+    "encryptionDescription": "귀하의 데이터를 안전하게 보호하기 위해 256비트 암호화를 사용하며 로그인 자격 증명을 저장하지 않습니다.",
+    "addNewAccount": "새 계좌 추가",
+    "noBankAccountLinked": "연결된 은행 계좌가 없습니다",
+    "somethingWentWrong": "뭔가 잘못되었습니다!!"
   }
 }

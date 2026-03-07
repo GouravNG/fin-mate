@@ -68,5 +68,30 @@
   "notifications": {
     "title": "आपकी सूचनाएं",
     "no_notifications": "आप पूरी तरह से अपडेट हैं! 🎉"
+  },
+  "userCard": {
+    "empty": {
+      "title": "अभी तक कोई कार्ड नहीं",
+      "description": "शुरू करने के लिए अपना पहला कार्ड जोड़ें।"
+    },
+    "error": {
+      "title": "कुछ गलत हुआ",
+      "description": "हम आपके कार्ड लोड नहीं कर सके। कृपया फिर से प्रयास करें।"
+    },
+    "action": {
+      "addNew": "नया कार्ड जोड़ें"
+    }
+  },
+  "bankAccounts": {
+    "yourCards": "आपके कार्ड",
+    "bankAccounts": "बैंक खाते",
+    "availableBalance": "उपलब्ध शेष",
+    "balance": "शेष",
+    "manageAccounts": "खातों का प्रबंधन करें",
+    "encryptedSecure": "एन्क्रिप्टेड और सुरक्षित",
+    "encryptionDescription": "हम आपके डेटा को सुरक्षित रखने के लिए 256-बिट एन्क्रिप्शन का उपयोग करते हैं और कभी भी आपकी लॉगिन क्रेडेंशियल नहीं रखते।",
+    "addNewAccount": "नया खाता जोड़ें",
+    "noBankAccountLinked": "कोई बैंक खाता जुड़ा नहीं है",
+    "somethingWentWrong": "कुछ गलत हुआ!!"
   }
 }

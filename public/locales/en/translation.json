@@ -68,5 +68,30 @@
   "notifications": {
     "title": "Your Notifications",
     "no_notifications": "You're all caught up! 🎉"
+  },
+  "userCard": {
+    "empty": {
+      "title": "No cards yet",
+      "description": "Add your first card to get started."
+    },
+    "error": {
+      "title": "Something went wrong",
+      "description": "We couldn't load your cards. Please try again."
+    },
+    "action": {
+      "addNew": "Add new card"
+    }
+  },
+  "bankAccounts": {
+    "yourCards": "Your cards",
+    "bankAccounts": "Bank Accounts",
+    "availableBalance": "Available balance",
+    "balance": "Balance",
+    "manageAccounts": "Manage accounts",
+    "encryptedSecure": "ENCRYPTED & SECURE",
+    "encryptionDescription": "We use 256-bit encryption to keep your data safe and never store your login credentials.",
+    "addNewAccount": "Add New Account",
+    "noBankAccountLinked": "No Bank account linked",
+    "somethingWentWrong": "Something went wrong!!"
   }
 }
