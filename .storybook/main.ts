@@ -9,6 +9,7 @@ const config: StorybookConfig = {
     '@storybook/addon-docs',
     '@storybook/addon-designs',
     '@storybook/addon-themes',
+    '@github-ui/storybook-addon-performance-panel',
   ],
   framework: '@storybook/react-vite',
 }
